@@ -1,0 +1,55 @@
+/*
+    侧边栏鼠标移入
+ */
+.el-submenu :hover {
+    background-color: #666EE8;
+}
+
+/**
+    侧边栏项
+ */
+.el-submenu__title {
+    padding: 20px 0 0 0;
+    transition: none;
+    overflow: hidden;
+}
+
+/**
+    侧边栏弹出框内容
+ */
+.el-menu-item {
+    height: 45px;
+    line-height: 45px;
+    color: #ffffff;
+
+}
+
+/*
+    修改侧边栏弹出框
+ */
+.el-menu--collapse .el-menu .el-submenu, .el-menu--popup {
+    min-width: 100px;
+    background-color: #666EE8;
+}
+
+/*
+    侧边栏弹出紧挨侧边栏
+*/
+.el-menu--popup-right-start {
+    margin: 0;
+}
+
+/*
+    侧边栏弹出框鼠标移入
+ */
+.el-menu--collapse .el-menu .el-submenu, .el-menu--popup :hover {
+
+    background-color: transparent;
+}
+
+/*
+    侧边栏弹出框激活颜色
+ */
+.el-menu-item.is-active{
+    color: aqua;
+}
