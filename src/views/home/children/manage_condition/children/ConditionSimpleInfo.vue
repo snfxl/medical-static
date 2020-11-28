@@ -1,23 +1,22 @@
 <template>
   <el-card class="box-card">
-    <div slot="header" class="clearfix">
+    <div class="info-title">
       <span>{{ cardTitle }}</span>
     </div>
     <div>
       <el-row :gutter="10">
-        <el-col :span="12">
-          <div>{{ describe }}</div>
-          <div>
-            <img :src="upImg" v-if="up"/>
-            <img :src="downImg" v-else>
+        <el-col :span="16">
+          <div class="describe">{{ describe }}</div>
+          <div class="up-and-down-div">
+            <img class="up-and-down" :src="downSvg[infoIcon-1]" v-if="!isUp">
+            <img class="up-and-down" :src="upSvg[infoIcon-1]" v-if="isUp">
             <span>{{ aboutCondition }}</span>
           </div>
         </el-col>
-        <el-col :span="12">
-          <img :src="manageCondition1" v-if="infoIcon===1">
-          <img :src="manageCondition2" v-if="infoIcon===2">
-          <img :src="manageCondition3" v-if="infoIcon===3">
-          <img :src="manageCondition4" v-if="infoIcon===4">
+        <el-col :span="8">
+          <div class="manageConditionIcon-div" :style="manageConditionIconBackgroundColor">
+            <img class="manageConditionIcon" :src="manageCondition[infoIcon-1]">
+          </div>
         </el-col>
       </el-row>
     </div>
@@ -28,12 +27,24 @@
 export default {
   data() {
     return {
-      upImg: require("@/assets/image/home/manage_condition/up.svg"),
-      downImg: require("@/assets/image/home/manage_condition/down.svg"),
-      manageCondition1: require("@/assets/image/home/manage_condition/managecondition1.png"),
-      manageCondition2: require("@/assets/image/home/manage_condition/managecondition2.png"),
-      manageCondition3: require("@/assets/image/home/manage_condition/managecondition3.png"),
-      manageCondition4: require("@/assets/image/home/manage_condition/managecondition4.png"),
+      manageCondition: [
+        require("@/assets/image/home/manage_condition/managecondition1.png"),
+        require("@/assets/image/home/manage_condition/managecondition2.png"),
+        require("@/assets/image/home/manage_condition/managecondition3.png"),
+        require("@/assets/image/home/manage_condition/managecondition4.png"),
+      ],
+      downSvg:[
+        require("@/assets/image/home/manage_condition/down1.svg"),
+        require("@/assets/image/home/manage_condition/down2.svg"),
+        require("@/assets/image/home/manage_condition/down3.svg"),
+        require("@/assets/image/home/manage_condition/down4.svg"),
+      ],
+      upSvg:[
+        require("@/assets/image/home/manage_condition/up1.svg"),
+        require("@/assets/image/home/manage_condition/up2.svg"),
+        require("@/assets/image/home/manage_condition/up3.svg"),
+        require("@/assets/image/home/manage_condition/up4.svg"),
+      ],
     }
   },
   props: {
@@ -45,9 +56,9 @@ export default {
       type: String,
       default: "今日挂号人次"
     },
-    up: {
+    isUp: {
       type: Boolean,
-      default: false
+      default: true
     },
     aboutCondition: {
       type: String,
@@ -58,11 +69,74 @@ export default {
       default: 1
     }
   },
-  methods: {
-  }
+  computed: {
+    manageConditionIconBackgroundColor() {
+      if (this.infoIcon === 1) {
+        return {
+          'background-color': '#F0F1FD'
+        }
+      } else if (this.infoIcon === 2) {
+        return {
+          'background-color': '#FFF0F0'
+        }
+      } else if (this.infoIcon === 3) {
+        return {
+          'background-color': '#EAFAF5'
+        }
+      } else if (this.infoIcon === 4) {
+        return {
+          'background-color': '#FFFAE9'
+        }
+      }
+    }
+  },
+  methods: {}
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+.box-card {
+  height: 170px;
+  margin-bottom: 20px;
+}
+
+.info-title {
+  font-size: 40px;
+  font-weight: bolder;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.describe {
+  color: #666;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.up-and-down-div {
+  padding-left: 20px;
+}
+
+.up-and-down {
+  width: 20px/1.25;
+  position: relative;
+  top: 2px;
+  margin-right: 5px;
+}
+
+.manageConditionIcon-div {
+  text-align: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  position: relative;
+  top: -40px;
+}
+
+.manageConditionIcon {
+  position: relative;
+  top: 18px;
+}
 
 </style>

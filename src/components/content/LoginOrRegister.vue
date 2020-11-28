@@ -1,12 +1,12 @@
 <template>
   <div class="login-or-register">
     <el-row :gutter="0" class="login-or-register-content">
-      <el-col :md="5" class="login-or-register-left">
+      <el-col :md="4" class="login-or-register-left">
       </el-col>
-      <el-col :md="15" class="login-or-register-center">
+      <el-col :md="16" class="login-or-register-center">
         <slot name="loginOrRegister"></slot>
       </el-col>
-      <el-col :md="5" class="login-or-register-right">
+      <el-col :md="4" class="login-or-register-right">
         <div></div>
       </el-col>
     </el-row>

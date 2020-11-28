@@ -59,7 +59,7 @@ export default {
   height: 656/1.25px;
   width: 100%;
   box-sizing: border-box;
-  padding-left: 340px;
+  padding-left: 460px;
   padding-top: 80px;
 }
 

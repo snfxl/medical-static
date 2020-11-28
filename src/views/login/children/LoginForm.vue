@@ -95,8 +95,8 @@ export default {
 }
 
 .image {
-  margin-left: 95/1.25px;
-  margin-right: 104/1.25px;
+  margin-left: 160/1.25px;
+  margin-right: 120/1.25px;
   width: 500/1.25px;
   height: 360/1.25px;
 }

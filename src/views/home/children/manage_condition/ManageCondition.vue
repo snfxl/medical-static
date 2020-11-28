@@ -1,25 +1,21 @@
 <!-- 经营概况-->
 <template>
-  <div class="manage-condition">
-    <el-row :gutter="10">
-      <el-col :span="2">
-        a
-      </el-col>
-      <el-col :span="20" class="manage-condition-content">
-        <condition-first-row/>
-        <condition-second-row/>
-        <condition-third-row/>
-        <el-pagination
-            background
-            layout="prev, pager, next"
-            :total="1000">
-        </el-pagination>
-      </el-col>
-      <el-col :span="2">
-        a
-      </el-col>
-    </el-row>
-  </div>
+  <el-row :gutter="10" class="manage-condition">
+    <el-col class="manage-condition-side" :span="2">
+    </el-col>
+    <el-col :span="20" class="manage-condition-content">
+      <condition-first-row/>
+      <condition-second-row/>
+      <condition-third-row/>
+      <el-pagination
+          background
+          layout="prev, pager, next"
+          :total="1000">
+      </el-pagination>
+    </el-col>
+    <el-col class="manage-condition-side" :span="2">
+    </el-col>
+  </el-row>
 </template>
 
 <script>
@@ -37,13 +33,19 @@ export default {
 
 <style scoped lang="less">
 .manage-condition {
+  height: 100%;
   background-color: #F2F2F2;
 }
 
 .manage-condition-content {
-  background-color: #ffffff;
+  background-color: #fff;
   margin-top: 40px;
   padding-top: 30px;
+}
+
+.manage-condition-side {
+
+  height: 100%;
 }
 </style>
 

@@ -1,11 +1,10 @@
 <template>
   <div>
-      <span class="chart-title">诊所收入趋势</span>
-      <div class="line-between"></div>
-      <div id="myChart" class="chart">
+    <span class="chart-title">诊所收入趋势</span>
+    <div class="line-between"></div>
+    <div id="myChart" class="chart">
     </div>
   </div>
-
 </template>
 
 <script>
@@ -14,8 +13,13 @@ import echarts from 'echarts'
 export default {
   data() {
     return {
-      xAxisData: ['12-01', '12-02', '12-03', '12-04', '12-05', '12-06', '12-07'], // x轴数据，可根据需求
-      yAxisData: [2300.01, 2800.02, 3800.03, 5000.04, 3200.05, 1800.06, 4100.07], // 数据
+      xAxisDataMonth:['11-30','12-01','12-02','12-03','12-04','12-05','12-06','12-07','12-08',
+        '12-09','12-10','12-11','12-12','12-13','12-14','12-15','12-16','12-17',
+        '12-18','12-19','12-20','12-21','12-22','12-23','12-24','12-25','12-26','12-27','12-28','12-29','12-30'],
+      yAxisDataMonth:['2000.01','2300.00','3000.03','3200.23','4000.23',
+        '3800.56','3500.66','4100.00','5000.00','4800.00','4400.00','4200.00','4700.00',
+        '6000.00','5500.00','5200.00','3200.00','2200.00','2800.00','2900.00','3100.00',
+        '3200.00','3500.00','3950.00','4150.00','4350.00','5000.00','5105.00','5350.00','5550.00','3000.00']
     }
   },
   mounted() {
@@ -24,41 +28,11 @@ export default {
   methods: {
     loadLine() {
       let option = {
-        title: {
-          // link:'',//主标题文本超链接,默认值true
-          // target: null,//指定窗口打开主标题超链接，支持'self' | 'blank'，不指定等同为'blank'（新窗口）
-          // sublink: '',//副标题文本超链接
-          // subtarget: null,//指定窗口打开副标题超链接，支持'self' | 'blank'，不指定等同为'blank'（新窗口）
-          //itemGap: 10,主副标题纵向间隔，单位px，默认为10
 
-          // //1.显示策略，默认值true,可选为：true（显示） | false（隐藏）
-          // show:true,
-          // //2.主标题文本，'\n'指定换行
-          // text: '诊所收入趋势',
-          // //副标题文本，'\n'指定换行
+        title:{
           subtext: '单位 ( 元 )',
-          //3.水平安放位置，默认为'left'，可选为：'center' | 'left' | 'right' | {number}（x坐标，单位px）
           x: 20,
-          // //4.垂直安放位置，默认为top，可选为：'top' | 'bottom' | 'center' | {number}（y坐标，单位px）
           y: 15,
-          // //5.水平对齐方式，默认根据x设置自动调整，可选为： left' | 'right' | 'center
-          // textAlign: null,
-          // //6.标题背景颜色，默认'rgba(0,0,0,0)'透明
-          // backgroundColor: 'rgba(0,0,0,0)',
-          // //7.标题边框颜色,默认'#ccc'
-          // borderColor: '#ccc',
-          // //8.标题边框线宽，单位px，默认为0（无边框）
-          // borderWidth: 1,
-          // //9.标题内边距，单位px，默认各方向内边距为5，接受数组分别设定上右下左边距
-          // padding: 5,
-          // //10.主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
-          // textStyle: {
-          //   fontFamily: 'Arial, Verdana, sans...',
-          //   fontSize: 12,
-          //   fontStyle: 'normal',
-          //   fontWeight: 'normal',
-          // },
-          //11.副标题文本样式{"color": "#aaa"}
           subtextStyle: {
             fontFamily: 'Arial, Verdana, sans...',
             fontSize: 12,
@@ -118,7 +92,7 @@ export default {
         },
         xAxis: {
           // x轴数据
-          data: this.xAxisData,
+          data: this.xAxisDataMonth,
           type: 'category',
           boundaryGap: false,
           //去掉坐标轴刻度
@@ -165,14 +139,14 @@ export default {
         series: [
           {
             // y轴数据
-            data: this.yAxisData,
+            data: this.yAxisDataMonth,
             type: 'line',
             //折线点设置为实心点
-            symbol: 'circle',
+            // symbol: 'circle',
             //让曲线变平滑的
             smooth: true,
             //折线点的大小
-            symbolSize: 13,
+            symbolSize: 10,
             //设置鼠标放上去动作
             hoverAnimation: false,
             //改变折线区域颜色
@@ -219,14 +193,12 @@ export default {
   width: 100%;
   height: 380px/1.25;
 }
-
-.line-between {
+.line-between{
   border-bottom: #F6F6F6 2px solid;
   position: relative;
   top: 15px;
 }
-
-.chart-title {
+.chart-title{
   font-size: 20px;
   font-weight: bold;
   position: relative;
