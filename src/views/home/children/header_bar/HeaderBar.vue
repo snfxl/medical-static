@@ -79,7 +79,7 @@ export default {
 
 .username {
   display: inline-block;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   position: relative;
   bottom: 13px;

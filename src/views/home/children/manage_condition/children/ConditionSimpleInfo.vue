@@ -5,7 +5,7 @@
     </div>
     <div>
       <el-row :gutter="10">
-        <el-col :span="16">
+        <el-col :span="17">
           <div class="describe">{{ describe }}</div>
           <div class="up-and-down-div">
             <img class="up-and-down" :src="downSvg[infoIcon-1]" v-if="!isUp">
@@ -13,7 +13,7 @@
             <span>{{ aboutCondition }}</span>
           </div>
         </el-col>
-        <el-col :span="8">
+        <el-col :span="7">
           <div class="manageConditionIcon-div" :style="manageConditionIconBackgroundColor">
             <img class="manageConditionIcon" :src="manageCondition[infoIcon-1]">
           </div>

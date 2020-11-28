@@ -2,8 +2,7 @@
   <div>
     <span class="circle-title">今日会员消费占比</span>
     <div class="line-between"></div>
-    <div id="myChartPie" class="chart">
-    </div>
+    <div id="myChartPie" class="chart"></div>
   </div>
 </template>
 

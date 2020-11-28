@@ -50,13 +50,19 @@
 /*
     侧边栏弹出框激活颜色
  */
-.el-menu-item.is-active{
+.el-menu-item.is-active {
     color: aqua;
 }
 
 /**
     文本区
  */
-.el-card{
+.el-card {
     border-radius: 20px;
+}
+/**
+   设置分页导航背景
+ */
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: pink;
 }

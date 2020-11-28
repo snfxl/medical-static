@@ -76,8 +76,8 @@ export default {
 
 <style scoped lang="less">
 .second-row {
-  padding-left: 40px;
-  padding-right: 34px;
+  padding-left: 25px;
+  padding-right: 18px;
 
   .box-card {
     margin-right: 10px;

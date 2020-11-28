@@ -5,7 +5,6 @@
       <div id="myChart" class="chart">
     </div>
   </div>
-
 </template>
 
 <script>

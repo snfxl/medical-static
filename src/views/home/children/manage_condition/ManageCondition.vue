@@ -7,11 +7,6 @@
       <condition-first-row/>
       <condition-second-row/>
       <condition-third-row/>
-      <el-pagination
-          background
-          layout="prev, pager, next"
-          :total="1000">
-      </el-pagination>
     </el-col>
     <el-col class="manage-condition-side" :span="2">
     </el-col>
