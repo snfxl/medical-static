@@ -1,6 +1,6 @@
 <template>
   <div class="third-row">
-    <el-card class="box-card">
+    <el-card class="box-card third-row-content">
       <div slot="header" class="clearfix">
         <span>今日门诊记录</span>
       </div>
@@ -9,7 +9,7 @@
                 :cell-style="{'text-align':'center'}">
         <el-table-column prop="id" label="序号"></el-table-column>
         <el-table-column prop="status" label="就诊状态">
-          <template scope="scope">
+          <template slot-scope="scope">
             <span class="status">
               {{ pageData[scope.$index].status }}
             </span>
@@ -23,21 +23,20 @@
         <el-table-column prop="clinicType" label="门诊类型"/>
         <el-table-column prop="department" label="科室"/>
         <el-table-column prop="doctor" label="挂号医生"/>
-        <el-table-column prop="updateTime" label="最后更新时间" width="110px"/>
+        <el-table-column prop="updateTime" label="最后更新" width="100px"/>
       </el-table>
       <!-- 分页导航-->
       <!--
         @getPageData 自定义监听事件 当子组件发送该事件后监听到自动执行getPageData方法
         getPageData方法中的参数用来获取到子组件传来的数据
       -->
-      <page :table-data="tableData" class="page" @getPageData="getPageData"/>
+      <sn-page :table-data="tableData" class="page" @getPageData="getPageData"/>
     </el-card>
   </div>
 </template>
 
 <script>
-import Page from "@/components/common/Page";
-
+import SnPage from "@/components/common/page/SnPage";
 export default {
   data() {
     return {
@@ -191,7 +190,7 @@ export default {
       pageData: []
     }
   },
-  components: {Page},
+  components: {SnPage},
   methods: {
     getPageData(pageData) {
       this.pageData = pageData
@@ -202,11 +201,8 @@ export default {
 
 <style scoped lang="less">
 .third-row {
-  padding-left: 26px;
-  padding-right: 26px;
-  margin-top: 40px;
-
-  .box-card {
+  margin-top: 25px;
+  .third-row-content {
     //标题
     .clearfix {
       span {

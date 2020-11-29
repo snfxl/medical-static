@@ -44,7 +44,6 @@ export default {
 
 <style scoped>
 .first-row{
-  padding-left: 25px;
-  padding-right: 25px;
+
 }
 </style>

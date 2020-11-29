@@ -14,9 +14,7 @@
           </div>
         </el-col>
         <el-col :span="7">
-          <div class="manageConditionIcon-div" :style="manageConditionIconBackgroundColor">
-            <img class="manageConditionIcon" :src="manageCondition[infoIcon-1]">
-          </div>
+          <sn-image-in-circle :circle-style="manageConditionIconBackgroundColor" :img-src="manageCondition[infoIcon-1]"/>
         </el-col>
       </el-row>
     </div>
@@ -24,7 +22,10 @@
 </template>
 
 <script>
+import SnImageInCircle from "@/components/common/avatar/SnImageInCircle";
+
 export default {
+  components: {SnImageInCircle},
   data() {
     return {
       manageCondition: [
@@ -33,13 +34,13 @@ export default {
         require("@/assets/image/home/manage_condition/managecondition3.png"),
         require("@/assets/image/home/manage_condition/managecondition4.png"),
       ],
-      downSvg:[
+      downSvg: [
         require("@/assets/image/home/manage_condition/down1.svg"),
         require("@/assets/image/home/manage_condition/down2.svg"),
         require("@/assets/image/home/manage_condition/down3.svg"),
         require("@/assets/image/home/manage_condition/down4.svg"),
       ],
-      upSvg:[
+      upSvg: [
         require("@/assets/image/home/manage_condition/up1.svg"),
         require("@/assets/image/home/manage_condition/up2.svg"),
         require("@/assets/image/home/manage_condition/up3.svg"),
@@ -90,7 +91,9 @@ export default {
       }
     }
   },
-  methods: {}
+  comments: {
+    SnImageInCircle
+  }
 }
 </script>
 
@@ -123,20 +126,6 @@ export default {
   position: relative;
   top: 2px;
   margin-right: 5px;
-}
-
-.manageConditionIcon-div {
-  text-align: center;
-  height: 60px;
-  width: 60px;
-  border-radius: 30px;
-  position: relative;
-  top: -40px;
-}
-
-.manageConditionIcon {
-  position: relative;
-  top: 18px;
 }
 
 </style>

@@ -60,9 +60,56 @@
 .el-card {
     border-radius: 20px;
 }
+
 /**
    设置分页导航背景
  */
 .el-pagination.is-background .el-pager li:not(.disabled).active {
     background-color: pink;
+}
+
+/**
+    日期选择器 相关
+ */
+
+/* 选择日期按钮移入颜色 */
+.el-picker-panel__shortcut:hover {
+    color: pink;
+}
+
+/* 选择日期按钮样式 */
+.el-picker-panel__sidebar {
+
+    padding-top: 10px;
+}
+
+.el-picker-panel__shortcut {
+    padding-left: 28px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/*  鼠标移入日期样式 */
+.el-date-table td.available:hover {
+    color: #666EE8;
+}
+
+/* 鼠标选中日期样式 */
+/*  开始 */
+.el-date-table td.start-date span {
+    background-color: pink;
+    color: #ffffff;
+}
+
+/* 结束 */
+.el-date-table td.end-date span {
+    background-color: pink;
+    color: #ffffff;
+}
+
+/* 今天日期样式 */
+.el-date-table td.today span {
+    color: #666EE8;
+    font-weight: 700;
 }

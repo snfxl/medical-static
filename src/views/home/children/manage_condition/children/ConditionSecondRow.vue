@@ -1,6 +1,6 @@
 <template>
   <el-row :gutter="10" class="second-row">
-    <el-col :span="18">
+    <el-col :span="18" class="chart-left">
       <el-card class="box-card">
         <div>
           <span class="change-show-chart">
@@ -76,29 +76,21 @@ export default {
 
 <style scoped lang="less">
 .second-row {
-  padding-left: 25px;
-  padding-right: 18px;
+  .change-show-chart {
+    float: right;
+    margin-right: 20px;
 
-  .box-card {
-    margin-right: 10px;
-  }
-}
+    .el-button {
+      font-size: 10px;
+      height: 5px;
+      width: 60px;
 
-.change-show-chart {
-  float: right;
-  margin-right: 20px;
-
-  .el-button {
-    font-size: 10px;
-    height: 5px;
-    width: 60px;
-
-    span {
-      position: relative;
-      bottom: 5px;
-      right: 10px;
+      span {
+        position: relative;
+        bottom: 5px;
+        right: 10px;
+      }
     }
   }
-
 }
 </style>

@@ -7,7 +7,6 @@
         <slot name="loginOrRegister"></slot>
       </el-col>
       <el-col :md="4" class="login-or-register-right">
-        <div></div>
       </el-col>
     </el-row>
   </div>
