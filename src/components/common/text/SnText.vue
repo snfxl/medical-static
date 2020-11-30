@@ -3,6 +3,9 @@
     <span :style="setStyle">
       {{ text }}
     </span>
+    <span>
+      <slot name="other"/>
+    </span>
   </div>
 </template>
 

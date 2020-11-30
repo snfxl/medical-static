@@ -16,7 +16,6 @@
 
 <script>
 import WorkspaceItem from "@/views/home/children/workspace/children/WorkspaceItem";
-
 export default {
   components:{
     WorkspaceItem

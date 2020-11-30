@@ -10,23 +10,7 @@
 </template>
 
 <script>
-import SnRowHasTwoCol from "@/components/common/layout/row/SnRowHasTwoCol";
-import SnSelectHasSelect from "@/components/common/select/SnSelectHasSelect";
-import SnInput from "@/components/common/input/SnInput";
-import SnMustText from "@/components/common/text/SnMustText";
-export default {
-  name: "NewSeeDoctorThirdRow",
-  components:{
-    SnRowHasTwoCol,
-    SnSelectHasSelect,
-    SnInput,
-    SnMustText
-  },
-  data(){
-    return{
-    }
-  }
-}
+export default {}
 </script>
 
 <style scoped>

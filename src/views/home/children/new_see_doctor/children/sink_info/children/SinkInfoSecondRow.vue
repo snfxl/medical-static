@@ -19,18 +19,7 @@
 </template>
 
 <script>
-import SnRowHasFourCol from "@/components/common/layout/row/SnRowHasFourCol";
-import SnInput from "@/components/common/input/SnInput";
-import SnSelect from "@/components/common/select/SnSelect";
-import SnMustText from "@/components/common/text/SnMustText";
-
 export default {
-  components: {
-    SnRowHasFourCol,
-    SnInput,
-    SnSelect,
-    SnMustText
-  },
   data() {
     return {
       sex: [

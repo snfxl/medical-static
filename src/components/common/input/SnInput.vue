@@ -1,23 +1,30 @@
 <template>
-  <div>
+  <div class="sn-input">
     <div class="title">
       <slot name="title"/>
     </div>
-    <el-input v-model="input" style="width: 100%" :placeholder="inputPlaceholder"></el-input>
+    <el-input  v-model="inputValue" :style="inputStyle" :placeholder="inputPlaceholder"></el-input>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      input: ''
-    }
-  },
   props: {
     inputPlaceholder: {
       type: String,
       default: '请输入内容'
+    },
+    inputValue: {
+      type: String,
+      default: ''
+    },
+    inputStyle:{
+      type: Object,
+      default(){
+        return {
+          'width': '100%'
+        }
+      }
     }
   }
 }
@@ -28,4 +35,7 @@ export default {
   margin-bottom: 10px;
 }
 
+.sn-input {
+  margin-right: 5px;
+}
 </style>

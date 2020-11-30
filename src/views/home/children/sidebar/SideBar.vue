@@ -35,7 +35,7 @@
         </template>
         <el-menu-item-group>
           <span slot="title">挂号管理</span>
-          <el-menu-item index="1-1" @click="toNewSeeDoctor">新增挂号</el-menu-item>
+          <el-menu-item index="1-1" @click="toRegistrationManage">新增挂号</el-menu-item>
           <el-menu-item index="1-2">挂号管理</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
@@ -112,7 +112,6 @@
           <el-menu-item index="1-8">诊所信息维护</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
-
     </el-menu>
   </div>
 </template>

@@ -50,8 +50,6 @@
 </template>
 
 <script>
-import SnImageInCircle from "@/components/common/avatar/SnImageInCircle";
-
 export default {
   name: "WorkspaceItem",
   data() {
@@ -81,7 +79,6 @@ export default {
       default: '#FF6262'
     }
   },
-  components: {SnImageInCircle},
   computed: {
     getBackgroundColor() {
       return {

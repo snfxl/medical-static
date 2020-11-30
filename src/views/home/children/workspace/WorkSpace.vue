@@ -14,17 +14,13 @@
 
 <script>
 import WorkspaceRow from "@/views/home/children/workspace/children/WorkspaceRow";
-import SnThreeColSpace from "@/components/common/layout/SnThreeColSpace";
 import WorkspaceTopBar from "@/views/home/children/workspace/children/WorkspaceTopBar";
-import SnPage from "@/components/common/page/SnPage";
 
 export default {
   name: "WorkSpace",
   components: {
     WorkspaceRow,
-    SnThreeColSpace,
     WorkspaceTopBar,
-    SnPage
   }
 }
 </script>

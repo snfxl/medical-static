@@ -1,17 +1,18 @@
 <template>
-  <div>
-    <el-dropdown trigger="click" size="medium"
-                 split-button type="primary" class="sn-dropdown">
+  <div :style="{'margin-top':'20px'}">
+    <el-dropdown trigger="click"
+                 size="medium"
+                 split-button
+                 type="warning" round>
       <div>
         <slot name="title"/>
       </div>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item v-for="item in downData" @click="addTab(item)">
-          <el-button
-              size="small"
+          <span
               @click="addTab(item)">
             {{ item }}
-          </el-button>
+          </span>
         </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
@@ -21,29 +22,35 @@
           :key="item.name"
           :label="item.title"
           :name="item.name">
-        {{ item.content }}
+        <west-prescription v-if="item.content === '西/成药处方'"/>
+        <center-prescription v-if="item.content === '中药处方'"/>
+        <check-item-prescription v-if="item.content === '检查项目'"/>
       </el-tab-pane>
     </el-tabs>
   </div>
 </template>
 
 <script>
-import SnText from "@/components/common/text/SnText";
+import WestPrescription from "@/views/home/children/new_see_doctor/children/prescription/children/WestPrescription";
+import CenterPrescription from "@/views/home/children/new_see_doctor/children/prescription/children/CenterPrescription";
+import CheckItemPrescription
+  from "@/views/home/children/new_see_doctor/children/prescription/children/CheckItemPrescription";
 
 export default {
   name: "DownHasTabs",
   components: {
-    SnText
+    WestPrescription,
+    CenterPrescription,
+    CheckItemPrescription
   },
   props: {
     downData: {
       type: Array,
-      default: ['全部', '待接诊', '接诊中', '已完成']
+      default: []
     }
   },
   data() {
     return {
-
       editableTabsValue: '0',
       editableTabs: [],
       tabIndex: 0
@@ -55,7 +62,7 @@ export default {
       this.editableTabs.push({
         title: targetName,
         name: newTabName,
-        content: 'New Tab content'
+        content: targetName
       });
       this.editableTabsValue = newTabName;
     },
@@ -81,24 +88,4 @@ export default {
 </script>
 
 <style scoped>
-.sn-dropdown {
-  margin-right: 30px;
-  margin-top: 5px;
-
-}
-
-/deep/ .el-button--primary {
-  background-color: #66D4A2;
-}
-
-.el-dropdown-menu__item {
-  width: 90px;
-  padding-left: 20px;
-}
-
-span {
-  position: relative;
-  left: 20px;
-}
-
 </style>

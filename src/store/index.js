@@ -7,8 +7,11 @@ import mutation from "@/store/mutation";
 Vue.use(Vuex)
 const state = {
   homeTitle: '经营概况',
-  user:{
-    username:"忆生"
+  user: {
+    username: "忆生"
+  },
+  cellCenter: {
+    'text-align': 'center',
   }
 }
 

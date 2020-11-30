@@ -10,17 +10,7 @@
 </template>
 
 <script>
-import SnRowHasTwoCol from "@/components/common/layout/row/SnRowHasTwoCol";
-import SnSelectCreateItem from "@/components/common/select/SnSelectCreateItem";
-import SnMustText from "@/components/common/text/SnMustText";
-
 export default {
-  name: "NewSeeDoctorFourthRow",
-  components: {
-    SnRowHasTwoCol,
-    SnSelectCreateItem,
-    SnMustText
-  },
   data() {
     return {
       oneColData: [

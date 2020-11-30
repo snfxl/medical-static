@@ -1,7 +1,10 @@
 <template>
   <div>
-    <span>
+    <span :style="titleStyle">
       {{ title }}
+    </span>
+    <span :style="otherStyle">
+      <slot name="other"/>
     </span>
   </div>
 </template>
@@ -13,7 +16,19 @@ export default {
     title: {
       type: String,
       default: ''
-    }
+    },
+    titleStyle: {
+      type: Object,
+      default() {
+        return {}
+      }
+    },
+    otherStyle: {
+      type: Object,
+      default() {
+        return {}
+      }
+    },
   }
 }
 </script>

@@ -18,6 +18,9 @@
       <el-table-column type="selection">
       </el-table-column>
       <el-table-column :prop="item.prop" :label="item.label" v-for="item in tableTitle" :width="item.width">
+        <template slot-scope="scope">
+          <sn-select :select-data="selectData"></sn-select>
+        </template>
       </el-table-column>
     </el-table>
     <div style="margin-top: 20px;float: left;margin-bottom: 10px" v-if="hasAddButton">
@@ -30,7 +33,13 @@
 </template>
 
 <script>
+import SnSelect from "@/components/common/select/SnSelect";
+
 export default {
+
+  components: {
+    SnSelect
+  },
 
   computed: {
     headerCellFontSize() {
@@ -42,6 +51,41 @@ export default {
   },
 
   props: {
+
+    //选择器相关
+    //选择器数据
+    selectData: {
+      type: Array,
+      default() {
+        return [
+          {
+            value: 1,
+            label: 'sss'
+          }
+        ]
+      }
+    },
+    //选择器样式
+    selectStyle: {
+      type: Object,
+      default() {
+        return {
+          'width': '100%'
+        }
+      }
+    },
+
+    //默认选中哪个
+    toSelect: {
+      type: Number,
+      default: 1
+    },
+
+    //默认显示的内容
+    selectPlaceholder: {
+      type: String,
+      default: '请选择'
+    },
 
     //表头字体大小
     headerCellFontSizeNumber: {
@@ -80,15 +124,15 @@ export default {
         return [
           {
             prop: 'date',
-            label: '日期'
+            label: '日期',
           },
           {
             prop: 'name',
-            label: '姓名'
+            label: '姓名',
           },
           {
             prop: 'address',
-            label: '地址'
+            label: '地址',
           },
         ];
       }

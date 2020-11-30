@@ -14,3 +14,57 @@ a {
     font-size: 14px;
     color: #666EE8;
 }
+
+.to-flex {
+    display: flex;
+}
+
+.font-pink {
+    color: pink;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.font {
+    font-size: 14px;
+}
+
+.font-change-weight {
+    font-weight: bold;
+}
+
+.font-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.margin-right {
+    margin-right: 10px;
+}
+
+.margin-left {
+    margin-left: 10px;
+}
+
+.margin-top {
+    margin-top: 10px;
+}
+
+.margin-bottom {
+    margin-bottom: 10px;
+}
+
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+
+.float-right{
+    float: right;
+}
+
+.float-left{
+    float: left;
+}

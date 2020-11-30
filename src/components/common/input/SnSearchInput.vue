@@ -1,10 +1,10 @@
 <template>
   <div class="demo-input-suffix">
     <el-input
-        placeholder="输入患者姓名"
+        :placeholder="inputPlaceholder"
         prefix-icon="el-icon-search"
         v-model="input"
-        style="width: 100%">
+        :style="{'width': '100%','font-size':'12px'}">
     </el-input>
   </div>
 </template>
@@ -15,6 +15,12 @@ export default {
   data() {
     return {
       input: '',
+    }
+  },
+  props: {
+    inputPlaceholder: {
+      type: String,
+      default: '输入患者姓名'
     }
   }
 }

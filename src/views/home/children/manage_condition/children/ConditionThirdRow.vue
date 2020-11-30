@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import SnPage from "@/components/common/page/SnPage";
 export default {
   data() {
     return {
@@ -190,7 +189,6 @@ export default {
       pageData: []
     }
   },
-  components: {SnPage},
   methods: {
     getPageData(pageData) {
       this.pageData = pageData

@@ -13,12 +13,13 @@
 import ConditionFirstRow from "@/views/home/children/manage_condition/children/ConditionFirstRow";
 import ConditionSecondRow from "@/views/home/children/manage_condition/children/ConditionSecondRow";
 import ConditionThirdRow from "@/views/home/children/manage_condition/children/ConditionThirdRow";
-import SnThreeColSpace from "@/components/common/layout/SnThreeColSpace";
 
 export default {
   name: "ManageCondition",
   components: {
-    ConditionFirstRow, ConditionSecondRow, ConditionThirdRow, SnThreeColSpace
+    ConditionFirstRow,
+    ConditionSecondRow,
+    ConditionThirdRow,
   }
 }
 </script>

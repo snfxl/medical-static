@@ -9,19 +9,8 @@
 </template>
 
 <script>
-import SnDatePickerWithRound from "@/components/common/date_choose/SnDatePickerWithRound";
-import SnSearchInput from "@/components/common/input/SnSearchInput";
-import SnSelect from "@/components/common/select/SnSelect";
-import SnText from "@/components/common/text/SnText";
-
 export default {
   name: "WorkspaceTopBar",
-  components: {
-    SnDatePickerWithRound,
-    SnSelect,
-    SnSearchInput,
-    SnText,
-  },
   data() {
     return {
       selectPlaceholder: '接诊状态',

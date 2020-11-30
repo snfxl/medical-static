@@ -44,8 +44,16 @@ export default {
       type: Array,
       default: [
         {
-          value: '1',
-          label: ''
+          value: 1,
+          label: 'aaa'
+        },
+        {
+          value: 2,
+          label: 'bbb'
+        },
+        {
+          value: 3,
+          label: 'ccc'
         },
       ],
     },

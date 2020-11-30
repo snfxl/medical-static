@@ -22,10 +22,7 @@
 </template>
 
 <script>
-import SnImageInCircle from "@/components/common/avatar/SnImageInCircle";
-
 export default {
-  components: {SnImageInCircle},
   data() {
     return {
       manageCondition: [
@@ -91,9 +88,6 @@ export default {
       }
     }
   },
-  comments: {
-    SnImageInCircle
-  }
 }
 </script>
 
