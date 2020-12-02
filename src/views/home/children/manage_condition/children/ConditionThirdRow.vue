@@ -39,154 +39,17 @@
 export default {
   data() {
     return {
-      //数据
-      tableData: [
-        {
-          id: '1',
-          status: '待接诊',
-          sinkId: '15',
-          name: 'sn',
-          sex: '男',
-          age: '22',
-          phoneNumber: '123456789',
-          clinicType: '初诊',
-          department: '内科',
-          doctor: 'fxl',
-          updateTime: '2019-11-12 12:08:12'
-        },
-        {
-          id: '1',
-          status: '待接诊',
-          sinkId: '15',
-          name: 'sn',
-          sex: '男',
-          age: '22',
-          phoneNumber: '123456789',
-          clinicType: '初诊',
-          department: '内科',
-          doctor: 'fxl',
-          updateTime: '2019-11-12 12:08:12'
-        },
-        {
-          id: '1',
-          status: '待接诊',
-          sinkId: '15',
-          name: 'sn',
-          sex: '男',
-          age: '22',
-          phoneNumber: '123456789',
-          clinicType: '初诊',
-          department: '内科',
-          doctor: 'fxl',
-          updateTime: '2019-11-12 12:08:12'
-        },
-        {
-          id: '1',
-          status: '待接诊',
-          sinkId: '15',
-          name: 'sn',
-          sex: '男',
-          age: '22',
-          phoneNumber: '123456789',
-          clinicType: '初诊',
-          department: '内科',
-          doctor: 'fxl',
-          updateTime: '2019-11-12 12:08:12'
-        },
-        {
-          id: '1',
-          status: '待接诊',
-          sinkId: '15',
-          name: 'sn',
-          sex: '男',
-          age: '22',
-          phoneNumber: '123456789',
-          clinicType: '初诊',
-          department: '内科',
-          doctor: 'fxl',
-          updateTime: '2019-11-12 12:08:12'
-        },
-        {
-          id: '1',
-          status: '待接诊',
-          sinkId: '15',
-          name: 'sn',
-          sex: '男',
-          age: '22',
-          phoneNumber: '123456789',
-          clinicType: '初诊',
-          department: '内科',
-          doctor: 'fxl',
-          updateTime: '2019-11-12 12:08:12'
-        },
-        {
-          id: '1',
-          status: '待接诊',
-          sinkId: '15',
-          name: 'sn',
-          sex: '男',
-          age: '22',
-          phoneNumber: '123456789',
-          clinicType: '初诊',
-          department: '内科',
-          doctor: 'fxl',
-          updateTime: '2019-11-12 12:08:12'
-        },
-        {
-          id: '1',
-          status: '待接诊',
-          sinkId: '15',
-          name: 'sn',
-          sex: '男',
-          age: '22',
-          phoneNumber: '123456789',
-          clinicType: '初诊',
-          department: '内科',
-          doctor: 'fxl',
-          updateTime: '2019-11-12 12:08:12'
-        },
-        {
-          id: '1',
-          status: '待接诊',
-          sinkId: '15',
-          name: 'sn',
-          sex: '男',
-          age: '22',
-          phoneNumber: '123456789',
-          clinicType: '初诊',
-          department: '内科',
-          doctor: 'fxl',
-          updateTime: '2019-11-12 12:08:12'
-        },
-        {
-          id: '1',
-          status: '待接诊',
-          sinkId: '15',
-          name: 'sn',
-          sex: '男',
-          age: '22',
-          phoneNumber: '123456789',
-          clinicType: '初诊',
-          department: '内科',
-          doctor: 'fxl',
-          updateTime: '2019-11-12 12:08:12'
-        },
-        {
-          id: '1',
-          status: '待接诊',
-          sinkId: '15',
-          name: 'sn',
-          sex: '男',
-          age: '22',
-          phoneNumber: '123456789',
-          clinicType: '初诊',
-          department: '内科',
-          doctor: 'fxl',
-          updateTime: '2019-11-12 12:08:12'
-        },
-      ],
       //每页数据
       pageData: []
+    }
+  },
+  props: {
+    //数据
+    tableData: {
+      type: Array,
+      default() {
+        return []
+      }
     }
   },
   methods: {
@@ -200,6 +63,7 @@ export default {
 <style scoped lang="less">
 .third-row {
   margin-top: 25px;
+
   .third-row-content {
     //标题
     .clearfix {
