@@ -16,19 +16,19 @@ export default {
       selectPlaceholder: '接诊状态',
       selectData: [
         {
-          value: 1,
+          value: 0,
           label: '全部'
         },
         {
-          value: 2,
+          value: 1,
           label: '待接诊'
         },
         {
-          value: 3,
+          value: 2,
           label: '接诊中'
         },
         {
-          value: 4,
+          value: 3,
           label: '已完成'
         },
       ],

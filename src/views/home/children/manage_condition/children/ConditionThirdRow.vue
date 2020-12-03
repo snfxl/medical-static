@@ -8,20 +8,20 @@
                 :header-cell-style="{'text-align':'center'}"
                 :cell-style="{'text-align':'center'}">
         <el-table-column prop="id" label="序号"></el-table-column>
-        <el-table-column prop="status" label="就诊状态">
+        <el-table-column prop="meetDoctorStatus.status" label="就诊状态">
           <template slot-scope="scope">
             <span class="status">
-              {{ pageData[scope.$index].status }}
+              {{ pageData[scope.$index].meetDoctorStatus.status }}
             </span>
           </template>
         </el-table-column>
-        <el-table-column prop="sinkId" label="患者编号"/>
+        <el-table-column prop="sickId" label="患者编号"/>
         <el-table-column prop="name" label="患者姓名"/>
-        <el-table-column prop="sex" label="性别"/>
+        <el-table-column prop="sex.sex" label="性别"/>
         <el-table-column prop="age" label="年龄"/>
-        <el-table-column prop="phoneNumber" label="手机号码"/>
-        <el-table-column prop="clinicType" label="门诊类型"/>
-        <el-table-column prop="department" label="科室"/>
+        <el-table-column prop="phoneNumber" label="手机号码" width="110px"/>
+        <el-table-column prop="clinicType.clinicType" label="门诊类型"/>
+        <el-table-column prop="department.department" label="科室"/>
         <el-table-column prop="doctor" label="挂号医生"/>
         <el-table-column prop="updateTime" label="最后更新" width="100px"/>
       </el-table>
@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       //每页数据
-      pageData: []
+      pageData: [],
     }
   },
   props: {
@@ -57,6 +57,12 @@ export default {
       this.pageData = pageData
     }
   },
+
+  watch: {
+    tableData() {
+
+    }
+  }
 }
 </script>
 

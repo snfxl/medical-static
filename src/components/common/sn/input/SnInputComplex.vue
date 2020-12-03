@@ -3,7 +3,7 @@
     <div class="title">
       <slot name="title"/>
     </div>
-    <el-input placeholder="请输入内容" v-model="input1" class="input-with-select" style="width: 100%">
+    <el-input placeholder="请输入内容" v-model="inputValue" class="input-with-select" style="width: 100%">
       <el-select v-model="select" slot="append" placeholder="请选择" style="width: 70px">
         <el-option :label="item.label" :value="item.value" v-for="item in chooseItem"></el-option>
       </el-select>
@@ -15,14 +15,14 @@
 export default {
   data() {
     return {
-      input1: '',
+      inputValue: '',
       select: this.toSelect
     }
   },
   props: {
     toSelect: {
       type: Number,
-      default: 1
+      default: 0
     },
     chooseItem: {
       type: Array,
@@ -30,15 +30,15 @@ export default {
         return [
           {
             label: '岁',
-            value: 1
+            value: 0
           },
           {
             label: '月',
-            value: 2
+            value: 1
           },
           {
             label: '天',
-            value: 3
+            value: 2
           },
         ]
       }

@@ -1,7 +1,11 @@
 <template>
   <prescription-template
-      :table-data="CenterDrugData"
-      :select-data="CenterDrugSelectData"/>
+      :right-table-title="centerDrugInfoTableTitle"
+      :right-table-data="centerDrugInfoTableData"
+      :select-data="centerDrugInfoSelectData"
+      :select-description="centerSelectDescription"
+      :left-table-data="centerDrugAddTableData"
+  />
 </template>
 
 <script>
@@ -15,102 +19,364 @@ export default {
   },
   data() {
     return {
-      CenterDrugSelectData: [
+      centerDrugInfoTableData: [
         {
-          value: 1,
+          name: '阿胶珠',
+          specification: '16g',
+          stock: '300g',
+          price: '0.15'
+        },
+        {
+          name: '阿胶珠',
+          specification: '16g',
+          stock: '300g',
+          price: '0.15'
+        },
+        {
+          name: '阿胶珠',
+          specification: '16g',
+          stock: '300g',
+          price: '0.15'
+        },
+        {
+          name: '阿胶珠',
+          specification: '16g',
+          stock: '300g',
+          price: '0.15'
+        },
+        {
+          name: '阿胶珠',
+          specification: '16g',
+          stock: '300g',
+          price: '0.15'
+        },
+        {
+          name: '阿胶珠',
+          specification: '16g',
+          stock: '300g',
+          price: '0.15'
+        },
+        {
+          name: '阿胶珠',
+          specification: '16g',
+          stock: '300g',
+          price: '0.15'
+        },
+        {
+          name: '阿胶珠',
+          specification: '16g',
+          stock: '300g',
+          price: '0.15'
+        },
+        {
+          name: '阿胶珠',
+          specification: '16g',
+          stock: '300g',
+          price: '0.15'
+        },
+        {
+          name: '阿胶珠',
+          specification: '16g',
+          stock: '300g',
+          price: '0.15'
+        },
+        {
+          name: '阿胶珠',
+          specification: '16g',
+          stock: '300g',
+          price: '0.15'
+        },
+        {
+          name: '阿胶珠',
+          specification: '16g',
+          stock: '300g',
+          price: '0.15'
+        },
+      ],
+      centerDrugInfoTableTitle:[
+        {
+          prop: 'name',
+          label: '名称',
+          width: 120
+        },
+        {
+          prop: 'specification',
+          label: '规格'
+        },
+        {
+          prop: 'stock',
+          label: '库存'
+        },
+        {
+          prop: 'price',
+          label: '价格'
+        },
+      ],
+      centerDrugInfoSelectData: [
+        {
+          value: 0,
           label: '全部分类'
         },
         {
-          value: 2,
+          value: 1,
           label: '中草药'
         },
         {
-          value: 3,
+          value: 2,
           label: '清热类'
         },
         {
-          value: 4,
+          value: 3,
           label: '解读类'
         },
         {
-          value: 5,
+          value: 4,
           label: '免煎颗粒'
         },
       ],
-      CenterDrugData: [
+      centerSelectDescription:'药品分类',
+      centerDrugAddTableData:[
         {
-          name: '阿胶珠',
-          specification: '16g',
-          stock: '300g',
-          price: '0.15'
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
         },
         {
-          name: '阿胶珠',
-          specification: '16g',
-          stock: '300g',
-          price: '0.15'
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
         },
         {
-          name: '阿胶珠',
-          specification: '16g',
-          stock: '300g',
-          price: '0.15'
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
         },
         {
-          name: '阿胶珠',
-          specification: '16g',
-          stock: '300g',
-          price: '0.15'
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
         },
         {
-          name: '阿胶珠',
-          specification: '16g',
-          stock: '300g',
-          price: '0.15'
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
         },
         {
-          name: '阿胶珠',
-          specification: '16g',
-          stock: '300g',
-          price: '0.15'
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
         },
         {
-          name: '阿胶珠',
-          specification: '16g',
-          stock: '300g',
-          price: '0.15'
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
         },
         {
-          name: '阿胶珠',
-          specification: '16g',
-          stock: '300g',
-          price: '0.15'
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
         },
         {
-          name: '阿胶珠',
-          specification: '16g',
-          stock: '300g',
-          price: '0.15'
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
         },
         {
-          name: '阿胶珠',
-          specification: '16g',
-          stock: '300g',
-          price: '0.15'
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
         },
         {
-          name: '阿胶珠',
-          specification: '16g',
-          stock: '300g',
-          price: '0.15'
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
         },
         {
-          name: '阿胶珠',
-          specification: '16g',
-          stock: '300g',
-          price: '0.15'
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
         },
-      ],
+        {
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
+        },
+        {
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
+        },
+        {
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
+        },
+        {
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
+        },
+        {
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
+        },
+        {
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
+        },
+        {
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
+        },
+        {
+          id: '1',
+          groupId: '',
+          name: '舒必利盖子',
+          onceUse: '1',
+          useMethod: '',
+          frequency: '',
+          days: '',
+          total: '10',
+          price: '6.00',
+          remove: ''
+        },
+      ]
     }
   }
 }

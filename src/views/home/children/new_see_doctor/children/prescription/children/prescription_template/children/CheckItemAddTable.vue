@@ -24,35 +24,24 @@
         </template>
       </el-table-column>
       <el-table-column prop="name" label="名称"/>
-      <el-table-column prop="onceUse" label="单次用量" width="147">
+      <el-table-column prop="bodyPart" label="身体部位" width="145">
         <template slot-scope="scope">
           <div class="to-flex">
-            <sn-input :input-value="tableData[scope.$index].onceUse" class="drug-add-table-input"/>
-            <sn-select :select-data="onceUseUnit" :select-style="selectStyle"/>
+            <sn-input :input-value="tableData[scope.$index].bodyPart" class="drug-add-table-input"/>
           </div>
         </template>
       </el-table-column>
-      <el-table-column prop="useMethod" label="用法" width="117">
-        <template slot-scope="scope">
-          <sn-select class="select" :select-data="useMethodData" :select-style="{'width':'105px'}"/>
-        </template>
-      </el-table-column>
-      <el-table-column prop="frequency" label="频率" width="117">
-        <template slot-scope="scope">
-          <sn-select :select-data="frequencyData" :select-style="{'width':'105px'}"/>
-        </template>
-      </el-table-column>
-      <el-table-column prop="days" label="天数">
-        <template slot-scope="scope">
-          <sn-select :select-data="daysData" :select-style="selectStyle"/>
-        </template>
-      </el-table-column>
-      <el-table-column prop="total" label="总量" width="145">
+      <el-table-column prop="count" label="数量" width="100">
         <template slot-scope="scope">
           <div class="to-flex">
-            <sn-input :input-value="tableData[scope.$index].total" class="drug-add-table-input"/>
-            <sn-select :select-data="totalUnitData" :select-style="selectStyle"/>
+            <sn-input :input-value="tableData[scope.$index].bodyPart" class="drug-add-table-input margin-right"/>
+            <sn-text text="次" class="move-down"/>
           </div>
+        </template>
+      </el-table-column>
+      <el-table-column prop="checkType" label="检查类型" width="117">
+        <template slot-scope="scope">
+          <sn-select class="select" :select-data="checkTypeData" :select-style="{'width':'105px'}"/>
         </template>
       </el-table-column>
       <el-table-column prop="price" label="单价" width="90">
@@ -60,7 +49,17 @@
           <sn-input :input-value="tableData[scope.$index].price" class="drug-add-table-input"/>
         </template>
       </el-table-column>
-      <el-table-column prop="remove" label="移除" width="95px">
+      <el-table-column prop="totalPrice" label="金额" width="90">
+        <template slot-scope="scope">
+          <sn-input :input-value="tableData[scope.$index].totalPrice" class="drug-add-table-input"/>
+        </template>
+      </el-table-column>
+      <el-table-column prop="remark" label="备注" width="150">
+        <template slot-scope="scope">
+          <sn-input :input-value="tableData[scope.$index].remark" class="drug-add-table-input"/>
+        </template>
+      </el-table-column>
+      <el-table-column prop="remove" label="移除" width="95">
         <template slot-scope="scope">
           <el-button type="danger" icon="el-icon-delete" plain circle></el-button>
         </template>
@@ -80,12 +79,7 @@ export default {
 
   data() {
     return {
-      inputStyle: {
-        'padding': '0',
-        'text-align': 'center',
-      },
-      //选择器相关
-      //供选择的 分组
+      //分组
       groupIdData: [
         {
           value: 0,
@@ -116,8 +110,13 @@ export default {
           label: '7'
         },
       ],
-      //供选择的 使用方式
-      useMethodData: [
+      //选择器相关
+      inputStyle: {
+        'padding': '0',
+        'text-align': 'center',
+      },
+      //检查类型
+      checkTypeData: [
         {
           value: 0,
           label: '口服'
@@ -147,115 +146,30 @@ export default {
           label: '雾化'
         },
       ],
-      //供选择的 频率
-      frequencyData: [
-        {
-          value: 0,
-          label: '一天1次'
-        },
-        {
-          value: 1,
-          label: '一天2次'
-        },
-        {
-          value: 3,
-          label: '一天3次'
-        },
-        {
-          value: 4,
-          label: '一天4次'
-        },
-        {
-          value: 5,
-          label: '2小时1次'
-        },
-        {
-          value: 6,
-          label: '4小时1次'
-        },
-        {
-          value: 7,
-          label: '6小时1次'
-        },
-      ],
-      //供选择的 天数
-      daysData: [
-        {
-          value: 0,
-          label: '1'
-        },
-        {
-          value: 1,
-          label: '2'
-        },
-        {
-          value: 2,
-          label: '3'
-        },
-        {
-          value: 3,
-          label: '4'
-        },
-        {
-          value: 4,
-          label: '5'
-        },
-        {
-          value: 5,
-          label: '6'
-        },
-        {
-          value: 6,
-          label: '7'
-        },
-      ],
-      //供选择的总量的单位
-      totalUnitData: [
-        {
-          value: 0,
-          label: '瓶'
-        },
-        {
-          value: 1,
-          label: '盒'
-        },
-        {
-          value: 2,
-          label: '剂'
-        }
-      ],
-      //供选择的单次用量的单位
-      onceUseUnit: [
-        {
-          value: 0,
-          label: '片'
-        },
-        {
-          value: 1,
-          label: '颗'
-        },
-        {
-          value: '2',
-          label: '剂'
-        }
-      ],
     }
   },
   computed: {
     headerCellFontSize() {
       return this.headerCellFontSizeNumber + 'px'
-    }
-    ,
+    },
     cellFontSize() {
       return this.cellFontSizeNumber + 'px'
     }
   },
   props: {
     //选择器相关
+    //选择器数据
+    selectData: {
+      type: Array,
+      default() {
+        return []
+      }
+    },
     //选择器样式
     selectStyle: {
       type: Object,
-      default() {
+      default
+          () {
         return {
           'width': '100%'
         }
@@ -271,7 +185,7 @@ export default {
     //默认显示的内容
     selectPlaceholder: {
       type: String,
-      default: ''
+      default: '请选择'
     },
 
     //表头字体大小
@@ -308,7 +222,7 @@ export default {
     tableTitle: {
       type: Array,
       default() {
-        return []
+        return [];
       }
     },
 
@@ -316,7 +230,9 @@ export default {
     tableData: {
       type: Array,
       default() {
-        return []
+        return [
+
+        ]
       }
     }
   },
@@ -330,12 +246,10 @@ export default {
       } else {
         this.$refs.multipleTable.clearSelection();
       }
-    }
-    ,
+    },
     handleSelectionChange(val) {
       this.multipleSelection = val;
-    }
-    ,
+    },
     addSelection() {
 
     }
@@ -357,5 +271,10 @@ export default {
 .move-up {
   position: relative;
   bottom: 5px;
+}
+
+.move-down{
+  position: relative;
+  top: 12px;
 }
 </style>

@@ -22,7 +22,7 @@
 
 
 <script>
-import SnSelect from "@/components/common/select/SnSelect";
+import SnSelect from "@/components/common/sn/select/SnSelect";
 
 export default {
 

@@ -11,7 +11,7 @@ const Home = () => import("@/views/home/Home")
 //3.1 经营概况
 const ManageCondition = () => import("@/views/home/children/manage_condition/ManageCondition")
 //3.2 收费管理
-const CostManage = () => import("@/views/home/children/const_manage/CostManage")
+const CostManage = () => import("@/views/home/children/cost_manage/CostManage")
 //3.3 药品零售
 const DrugSale = () => import("@/views/home/children/drug_sale/DrugSale")
 //3.4 新开就诊
@@ -19,7 +19,7 @@ const NewSeeDoctor = () => import("@/views/home/children/new_see_doctor/NewSeeDo
 //3.5 挂号管理
 const RegistrationManage = () => import("@/views/home/children/registration_manage/RegistrationManage")
 //3.6 患者管理
-const SinkPersonManage = () => import("@/views/home/children/sink_person_manage/SinkPersonManage")
+const SinkPersonManage = () => import("@/views/home/children/sick_manage/SickManage")
 //3.7 统计报表
 const StatisticsTable = () => import("@/views/home/children/statistics_table/StatisticsTable")
 //3.8 系统设置
@@ -53,12 +53,8 @@ const routes = [
     component: Home,
     children: [
       {
-        path: '/home',
-        redirect:'manageCondition'
-      },
-      {
         //3.1 经营概况
-        path: 'manageCondition',
+        path: 'manageCondition/:homePart',
         component: ManageCondition
       },
       {
@@ -73,7 +69,7 @@ const routes = [
       },
       {
         //3.4 新开就诊
-        path: 'newSeeDoctor',
+        path: 'newSeeDoctor/:homePart',
         component: NewSeeDoctor
       },
       {
@@ -103,7 +99,7 @@ const routes = [
       },
       {
         //3.10 工作空间
-        path: 'workSpace',
+        path: 'workSpace/:homePart',
         component: WorkSpace
       },
       {

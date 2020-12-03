@@ -4,25 +4,38 @@
       <!-- 添加药品信息的地方 -->
       <sn-card-with-title slot="one-col">
         <div slot="title">
-          <sn-title title="Sn"
+          <sn-title title="Six"
                     :title-style="{'font-size':'40px','color':'pink'}"
                     :other-style="{'float':'right','margin-top':'10px'}">
             <batch-setting slot="other"/>
           </sn-title>
         </div>
-        <drug-add-table slot="content" :has-add-button="false"/>
+
+        <check-item-add-table slot="content"
+                              v-if="isCheckItemPrescription"
+                              :table-data="leftTableData"
+                              :has-add-button="false"
+        />
+        <drug-add-table slot="content"
+                        :has-add-button="false"
+                        :table-data="leftTableData"
+                        :table-title="leftTableTitle"
+                        v-else
+        />
+
+
       </sn-card-with-title>
+      <!-- 药品信息相关选择 -->
       <sn-card-with-title slot="two-col">
-        <!-- 药品信息相关选择 -->
         <sn-row-has-two-col slot="title" :left="12" :right="12">
           <div slot="one-col" class="title-left">
-            <sn-text :text="description" class="description"/>
+            <sn-text :text="selectDescription" class="description"/>
             <sn-select :select-data="selectData" :select-style="{'width':'120px'}"/>
           </div>
           <sn-search-input class="sn-search-input" slot="two-col" :input-placeholder="inputPlaceholder"/>
         </sn-row-has-two-col>
         <!-- 药品信息表格-->
-        <drug-table-info slot="content" :table-data="tableData" :table-title="tableTitle"/>
+        <drug-table-info slot="content" :table-data="rightTableData" :table-title="rightTableTitle"/>
       </sn-card-with-title>
     </sn-row-has-two-col>
     <sn-card-no-title>
@@ -32,7 +45,7 @@
         <el-button type="success"
                    plain slot="other"
                    class="margin-top margin-bottom float-right"
-                   >
+        >
           <sn-text text="添加处方"/>
         </el-button>
       </div>
@@ -49,6 +62,8 @@ import MoneyDetail
   from "@/views/home/children/new_see_doctor/children/prescription/children/prescription_template/children/MoneyDetail";
 import BatchSetting
   from "@/views/home/children/new_see_doctor/children/prescription/children/prescription_template/children/BatchSetting";
+import CheckItemAddTable
+  from "@/views/home/children/new_see_doctor/children/prescription/children/prescription_template/children/CheckItemAddTable";
 
 export default {
   name: "PrescriptionTemplate",
@@ -56,259 +71,50 @@ export default {
     DrugTableInfo,
     DrugAddTable,
     MoneyDetail,
-    BatchSetting
+    BatchSetting,
+    CheckItemAddTable
   },
   props: {
+
+    //是否是检查项目的处方
+    isCheckItemPrescription: false,
+
     inputPlaceholder: {
       type: String,
       default: '输入中文或拼音查询'
     },
+    leftTableData: {
+      type: Array,
+      default() {
+        return []
+      }
+    },
+    leftTableTitle: {
+      type: Array,
+      default() {
+        return []
+      }
+    },
     selectData: {
       type: Array,
       default() {
-        return [
-          {
-            value: 1,
-            label: '全部分类'
-          },
-          {
-            value: 2,
-            label: '常用药品'
-          },
-          {
-            value: 3,
-            label: '西药'
-          },
-          {
-            value: 4,
-            label: '感冒药'
-          },
-          {
-            value: 5,
-            label: '材料'
-          },
-        ]
+        return []
       }
     },
-    description: {
+    selectDescription: {
       type: String,
-      default: '药品分类'
+      default: ''
     },
-    tableData: {
+    rightTableData: {
       type: Array,
       default() {
-        return [
-          {
-            name: '减肥药符合袋aaaaaaaaaaaaaaaaaaaaaaa',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-          {
-            name: '减肥药符合袋',
-            specification: '1g*1',
-            stock: '1000',
-            price: '0.15'
-          },
-        ]
+        return []
       }
     },
-    tableTitle: {
+    rightTableTitle: {
       type: Array,
       default() {
-        return [
-          {
-            prop: 'name',
-            label: '名称',
-            width: 120
-          },
-          {
-            prop: 'specification',
-            label: '规格'
-          },
-          {
-            prop: 'stock',
-            label: '库存'
-          },
-          {
-            prop: 'price',
-            label: '价格'
-          },
-        ]
+        return []
       }
     }
   }

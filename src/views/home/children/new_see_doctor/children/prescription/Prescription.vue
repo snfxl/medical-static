@@ -22,7 +22,6 @@ export default {
       downData: ['西/成药处方', '中药处方', '检查项目'],
     }
   }
-
 }
 </script>
 

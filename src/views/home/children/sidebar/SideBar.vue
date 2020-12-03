@@ -150,7 +150,7 @@ export default {
     //路由相关
     //1 经营概况
     toManageCondition() {
-      this.$router.push("/home/manageCondition")
+      this.$router.push("/home/manageCondition/0")
     },
     //2 收费管理
     toCostManage() {
@@ -162,7 +162,7 @@ export default {
     },
     //4 新开就诊
     toNewSeeDoctor() {
-      this.$router.push("/home/newSeeDoctor")
+      this.$router.push("/home/newSeeDoctor/2")
     },
     //5 挂号管理
     toRegistrationManage() {
@@ -186,7 +186,7 @@ export default {
     },
     //10 工作空间
     toWorkSpace() {
-      this.$router.push("/home/workSpace")
+      this.$router.push("/home/workSpace/1")
     },
     //11 药品管理
     toDrugManage() {

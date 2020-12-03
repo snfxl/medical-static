@@ -3,24 +3,27 @@
     <div class="title">
       <slot name="title"/>
     </div>
-    <el-input  v-model="inputValue" :style="inputStyle" :placeholder="inputPlaceholder"></el-input>
+    <el-input v-model="inputValue" :style="inputStyle" :placeholder="inputPlaceholder"></el-input>
   </div>
 </template>
 
 <script>
 export default {
+
+  data() {
+    return {
+      inputValue: ''
+    }
+  },
+
   props: {
     inputPlaceholder: {
       type: String,
-      default: '请输入内容'
-    },
-    inputValue: {
-      type: String,
       default: ''
     },
-    inputStyle:{
+    inputStyle: {
       type: Object,
-      default(){
+      default() {
         return {
           'width': '100%'
         }

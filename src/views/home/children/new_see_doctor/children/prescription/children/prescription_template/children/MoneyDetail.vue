@@ -9,11 +9,11 @@
       <sn-must-text text="接诊医生" class="move-down margin-right"/>
       <sn-select :select-data="doctorData" class="margin-right"/>
       <sn-text text="此方合计: " class="move-down margin-right"/>
-      <sn-text :text="prescriptionMoney" class="font-pink margin-right price-move-down"/>
+      <sn-text :number="prescriptionMoney" class="font-pink margin-right price-move-down"/>
       <sn-text text="共" class="margin-right move-down"/>
-      <sn-text :text="prescriptionNumber" class="font-pink margin-right price-move-down"/>
+      <sn-text :number="prescriptionNumber" class="font-pink margin-right price-move-down"/>
       <sn-text text="个处方,共计:" class="margin-right move-down"/>
-      <sn-text :text="totalMoney" class="font-pink price-move-down"/>
+      <sn-text :number="totalMoney" class="font-pink price-move-down"/>
     </div>
   </div>
 </template>

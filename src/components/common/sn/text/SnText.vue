@@ -28,6 +28,10 @@ export default {
       type: String,
       default: '14'
     },
+    number: {
+      type: Number,
+      default: 0
+    }
   }
 }
 </script>

@@ -6,7 +6,7 @@
 
 <script>
 import RegisterForm from "@/views/register/children/RegisterForm";
-import LoginOrRegister from "@/components/content/LoginOrRegister";
+import LoginOrRegister from "@/views/login/children/LoginOrRegister";
 
 export default {
   name: "register",

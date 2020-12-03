@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import Form from "@/components/common/form/Form";
-import FormTitle from "@/components/common/form/FormTitle";
+import Form from "@/components/common/sn/form/Form";
+import FormTitle from "@/components/common/sn/form/FormTitle";
 
 export default {
   name: "RegisterForm",

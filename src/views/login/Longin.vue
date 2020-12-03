@@ -6,7 +6,7 @@
 
 <script>
 import LoginForm from "@/views/login/children/LoginForm";
-import LoginOrRegister from "@/components/content/LoginOrRegister";
+import LoginOrRegister from "@/views/login/children/LoginOrRegister";
 export default {
   name: "longin",
   components: {

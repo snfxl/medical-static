@@ -1,32 +1,32 @@
 import request from "@/network/request";
 
 //查所有
-export function getAllSink() {
+export function getAllDrug() {
   return request({
-    url: '/medical/getAllSink',
+    url: '/medical/getAllDrug',
     method: 'get'
   })
 }
 
 //根据id查询
-export function getSinkById(id) {
+export function getDrugById(id) {
   return request({
-    url: '/medical/getSinkById/id',
+    url: '/medical/getDrugById/id',
     method: 'get'
   })
 }
 
 //添加
-export function addSink(sink) {
+export function addDrug(sink) {
   return request({
-    url: '/medical/addSink',
+    url: '/medical/addDrug',
     method: 'post',
     data: sink
   })
 }
 
 //根据id修改
-export function updateSinkById(id) {
+export function updateDrugById(id) {
   return request({
     url: '/medical/id',
     method: 'put',
@@ -34,7 +34,7 @@ export function updateSinkById(id) {
 }
 
 //根据id删除
-export function deleteSinkById(id){
+export function deleteDrugById(id){
   return request({
     url: '/medical/id',
     method: 'delete',

@@ -34,9 +34,19 @@ export default {
       // 每页多少条
       pageSize: 5,
       // 当前页
-      currentPage: 1
+      currentPage: 1,
     }
   },
+
+  watch: {
+    tableData: {
+      handler(newValue) {
+
+      },
+      immediate: true
+    }
+  },
+
   props: {
     //数据
     tableData: {

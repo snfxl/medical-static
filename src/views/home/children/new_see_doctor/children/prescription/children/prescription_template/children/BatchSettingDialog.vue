@@ -12,13 +12,10 @@
           @selection-change="handleSelectionChange"
           :header-cell-style="{
           'text-align':'center',
-          'font-size': this.headerCellFontSize
         }"
           :cell-style="{
           'text-align':'center',
-          'font-size': this.cellFontSize
-        }"
-          :height="height">
+        }">
         <el-table-column type="selection">
         </el-table-column>
         <el-table-column prop="groupId" label="组号">
@@ -96,35 +93,34 @@ export default {
     //供选择的分组
     groupIdData: {
       type: Array,
-      default
-          () {
+      default() {
         return [
           {
-            value: 1,
+            value: 0,
             label: '1'
           },
           {
-            value: 2,
+            value: 1,
             label: '2'
           },
           {
-            value: 3,
+            value: 2,
             label: '3'
           },
           {
-            value: 4,
+            value: 3,
             label: '4'
           },
           {
-            value: 5,
+            value: 4,
             label: '5'
           },
           {
-            value: 6,
+            value: 5,
             label: '6'
           },
           {
-            value: 7,
+            value: 6,
             label: '7'
           },
         ]
@@ -133,35 +129,34 @@ export default {
     //供选择的使用方式
     useMethodData: {
       type: Array,
-      default
-          () {
+      default() {
         return [
           {
-            value: 1,
+            value: 0,
             label: '口服'
           },
           {
-            value: 2,
+            value: 1,
             label: '静脉注射'
           },
           {
-            value: 3,
+            value: 2,
             label: '注射药物'
           },
           {
-            value: 4,
+            value: 3,
             label: '检查'
           },
           {
-            value: 5,
+            value: 4,
             label: '皮试'
           },
           {
-            value: 6,
+            value: 5,
             label: '外用'
           },
           {
-            value: 7,
+            value: 6,
             label: '雾化'
           },
         ]
@@ -170,15 +165,14 @@ export default {
     //供选择的频率
     frequencyData: {
       type: Array,
-      default
-          () {
+      default() {
         return [
           {
-            value: 1,
+            value: 0,
             label: '一天1次'
           },
           {
-            value: 2,
+            value: 1,
             label: '一天2次'
           },
           {
@@ -207,35 +201,34 @@ export default {
     //供选择的天数
     daysData: {
       type: Array,
-      default
-          () {
+      default() {
         return [
           {
-            value: 1,
+            value: 0,
             label: '1'
           },
           {
-            value: 2,
+            value: 1,
             label: '2'
           },
           {
-            value: 3,
+            value: 2,
             label: '3'
           },
           {
-            value: 4,
+            value: 3,
             label: '4'
           },
           {
-            value: 5,
+            value: 4,
             label: '5'
           },
           {
-            value: 6,
+            value: 5,
             label: '6'
           },
           {
-            value: 7,
+            value: 6,
             label: '7'
           },
         ]
@@ -244,15 +237,14 @@ export default {
     //供选择的总量的单位
     totalUnitData: {
       type: Array,
-      default
-          () {
+      default() {
         return [
           {
-            value: 1,
+            value: 0,
             label: '瓶'
           },
           {
-            value: 2,
+            value: 1,
             label: '盒'
           }
         ]
@@ -261,15 +253,14 @@ export default {
     //供选择的单次用量的单位
     onceUseUnit: {
       type: Array,
-      default
-          () {
+      default() {
         return [
           {
-            value: 1,
+            value: 0,
             label: '片'
           },
           {
-            value: 2,
+            value: 1,
             label: '颗'
           }
         ]
@@ -281,19 +272,13 @@ export default {
       type: Array,
       default
           () {
-        return [
-          {
-            value: 1,
-            label: '1'
-          }
-        ]
+        return []
       }
     },
     //选择器样式
     selectStyle: {
       type: Object,
-      default
-          () {
+      default() {
         return {
           'width': '100%'
         }
@@ -303,8 +288,7 @@ export default {
     //默认选中哪个
     toSelect: {
       type: Number,
-      default:
-          1
+      default: 1
     },
   },
   methods: {

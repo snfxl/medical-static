@@ -1,6 +1,6 @@
 <template>
   <div class="header-bar">
-    <span class="home-title">{{ getHomeTitle }}</span>
+    <span class="home-title">{{ getHomeTitle[$route.params.homePart] }}</span>
     <el-dropdown>
           <span class="el-dropdown-link">
             <el-image :src="headImg"></el-image>
@@ -36,7 +36,7 @@ export default {
   name: "HeaderBar",
   data() {
     return {
-      headImg: require('@/assets/image/cyq.jpg')
+      headImg: require('@/assets/image/user/cyq.jpg'),
     };
   },
   computed: {

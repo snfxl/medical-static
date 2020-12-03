@@ -23,6 +23,12 @@ export default {
     }
   },
 
+  computed: {
+    getNowSelect() {
+      return this.utils.getSelectOption(this.value,this.selectData)
+    }
+  },
+
   props: {
     selectStyle: {
       type: Object,
@@ -34,7 +40,7 @@ export default {
     },
     toSelect: {
       type: Number,
-      default: 1
+      default: 0
     },
     selectPlaceholder: {
       type: String,
@@ -42,20 +48,9 @@ export default {
     },
     selectData: {
       type: Array,
-      default: [
-        {
-          value: 1,
-          label: 'aaa'
-        },
-        {
-          value: 2,
-          label: 'bbb'
-        },
-        {
-          value: 3,
-          label: 'ccc'
-        },
-      ],
+      default() {
+        return []
+      }
     },
   }
 }
