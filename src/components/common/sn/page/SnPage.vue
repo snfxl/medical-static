@@ -51,7 +51,9 @@ export default {
     //数据
     tableData: {
       type: Array,
-      default: []
+      default() {
+        return []
+      }
     }
   },
   computed: {
@@ -98,7 +100,9 @@ export default {
        */
       for (let i = 0; i < count; i++) {
         //将当前索引数据放到存放当前页数据的集合中
-        this.pageData.push(data[begin + i])
+        if (data[begin + i]){
+          this.pageData.push(data[begin + i])
+        }
       }
       /**
        * 向父组件发送自定义事件

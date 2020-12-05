@@ -7,7 +7,9 @@
           <sn-title title="Six"
                     :title-style="{'font-size':'40px','color':'pink'}"
                     :other-style="{'float':'right','margin-top':'10px'}">
-            <batch-setting slot="other"/>
+            <batch-setting slot="other"
+                           :has-choose-button-name="hasChooseButtonName"
+                           :not-choose-button-name="notChooseButtonName"/>
           </sn-title>
         </div>
 
@@ -32,7 +34,11 @@
           <sn-search-input class="sn-search-input" slot="two-col" :input-placeholder="inputPlaceholder"/>
         </sn-row-has-two-col>
         <!-- 药品信息表格-->
-        <drug-table-info slot="content" :table-data="rightTableData" :table-title="rightTableTitle"/>
+        <drug-table-info
+            slot="content"
+            :add-title="addTitle"
+            :table-data="rightTableData"
+            :table-title="rightTableTitle"/>
       </sn-card-with-title>
     </sn-row-has-two-col>
     <sn-card-no-title>
@@ -71,6 +77,24 @@ export default {
     CheckItemAddTable
   },
   props: {
+
+    //批量选择中  选中名字
+    hasChooseButtonName: {
+      type:String,
+      default:'已选中药品'
+    },
+
+    //未选中名字
+    notChooseButtonName:{
+      type:String,
+      default:'未选中药品'
+    },
+
+    //添加药品按钮的名字
+    addTitle: {
+      type: String,
+      default: '添加药品'
+    },
 
     //是否是检查项目的处方
     isCheckItemPrescription: false,

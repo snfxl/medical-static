@@ -1,8 +1,8 @@
 <template>
   <div class="to-flex">
     <sn-text text="批量操作" class="margin-right move-down"/>
-    <BatchSettingDialog button-description="已选中药品" :table-data="batchSettingDialogData" class="margin-right"/>
-    <BatchSettingDialog button-description="未选中药品" :table-data="batchSettingDialogData"/>
+    <BatchSettingDialog :button-description="hasChooseButtonName" :table-data="batchSettingDialogData" class="margin-right"/>
+    <BatchSettingDialog :button-description="notChooseButtonName" :table-data="batchSettingDialogData"/>
   </div>
 </template>
 
@@ -31,12 +31,22 @@ export default {
         },
       ]
     }
+  },
+  props: {
+    hasChooseButtonName: {
+      type:String,
+      default:''
+    },
+    notChooseButtonName:{
+      type:String,
+      default:''
+    }
   }
 }
 </script>
 
 <style scoped>
-.move-down{
+.move-down {
   position: relative;
   top: 4px;
 }

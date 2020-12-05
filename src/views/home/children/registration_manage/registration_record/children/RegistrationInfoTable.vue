@@ -43,7 +43,10 @@
         </template>
       </el-table-column>
     </el-table>
-    <sn-page :table-data="tableData" class="float-right margin-top-20" @getPageData="getPageData"/>
+    <sn-page
+        :table-data="tableData"
+        class="float-right margin-top-20 margin-bottom-20"
+        @getPageData="getPageData"/>
   </div>
 </template>
 

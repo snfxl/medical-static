@@ -67,7 +67,8 @@
 export default {
   data() {
     return {
-      multipleSelection: []
+      multipleSelection: [],
+      dialogTableVisible: false
     }
   },
 
@@ -75,11 +76,6 @@ export default {
     buttonDescription: {
       type: String,
       default: ''
-    },
-
-    dialogTableVisible: {
-      type: Boolean,
-      default: false
     },
 
     tableData: {

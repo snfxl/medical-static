@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "CheckOutDrugInfo"
+  name: "HasReturnPay"
 }
 </script>
 

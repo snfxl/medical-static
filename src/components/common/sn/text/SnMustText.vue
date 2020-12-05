@@ -1,7 +1,6 @@
 <template>
   <div>
-    <span :style="titleStyle"> {{ text }}</span>
-    <i>*</i>
+    <span :style="setStyle"> {{ text }} <i>*</i></span>
     <span :style="otherStyle">
       <slot name="other"/>
     </span>
@@ -11,17 +10,57 @@
 <script>
 export default {
   name: "MustText",
+  computed: {
+    setStyle() {
+      return {
+        'font-size': this.fontSize + 'px',
+        'color': this.fontColor,
+        'font-weight': this.fontWeight,
+        'position': 'relative',
+        'top': this.moveDown + 'px',
+        'bottom': this.moveUp + 'px',
+        'left': this.moveRight + 'px',
+        'right': this.moveLeft + 'px',
+      }
+    },
+  },
   props: {
+
+    moveDown: {
+      type: Number,
+      default: 0
+    },
+    moveUp: {
+      type: Number,
+      default: 0
+    },
+    moveRight: {
+      type: Number,
+      default: 0
+    },
+    moveLeft: {
+      type: Number,
+      default: 0
+    },
+
+    fontSize: {
+      type: Number,
+      default: 14
+    },
+    fontWeight: {
+      type: String,
+      default: ''
+    },
+    fontColor: {
+      type: String,
+      default: ''
+    },
+
     text: {
       type: String,
       default: ''
     },
-    titleStyle: {
-      type: Object,
-      default() {
-        return {}
-      }
-    },
+
     otherStyle: {
       type: Object,
       default() {

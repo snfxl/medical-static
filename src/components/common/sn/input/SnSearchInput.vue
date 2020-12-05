@@ -22,6 +22,7 @@ export default {
       input: '',
     }
   },
+
   props: {
     inputPlaceholder: {
       type: String,

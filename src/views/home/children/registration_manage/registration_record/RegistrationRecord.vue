@@ -9,7 +9,6 @@
       </div>
     </sn-card-with-title>
   </sn-three-col-space>
-
 </template>
 <script>
 import RegistrationRecordTitle

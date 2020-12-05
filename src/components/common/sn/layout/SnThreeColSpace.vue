@@ -1,13 +1,13 @@
 <template>
   <el-row :gutter="10" class="space">
-    <el-col class="space-side" :span="2">
+    <el-col class="space-side" :span="1">
     </el-col>
-    <el-col :span="20" class="space-content">
+    <el-col :span="22" class="space-content">
       <div class="space-content-div">
         <slot name="spaceContent"></slot>
       </div>
     </el-col>
-    <el-col class="space-side" :span="2">
+    <el-col class="space-side" :span="1">
     </el-col>
   </el-row>
 </template>
@@ -30,6 +30,7 @@ export default {
   margin-top: 40px;
   padding-top: 30px;
   padding-bottom: 20px;
+  border-radius: 20px;
 }
 
 .space-side {
@@ -37,7 +38,7 @@ export default {
   height: 100%;
 }
 
-.space-content-div{
+.space-content-div {
   padding-left: 25px;
   padding-right: 25px;
 }

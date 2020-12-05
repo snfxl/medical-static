@@ -5,11 +5,17 @@
         <condition-simple-info/>
       </el-col>
       <el-col :span="6" class="first-row-item">
-        <condition-simple-info :card-title="sinkAddTitle" describe="今日接诊人次" :up="upOrDown" about-condition="较昨日上升10%"
+        <condition-simple-info :card-title="sinkAddTitle"
+                               describe="今日接诊人次"
+                               :up="upOrDown"
+                               about-condition="较昨日上升10%"
                                :info-icon="sinkAddIcon"/>
       </el-col>
       <el-col :span="6" class="first-row-item">
-        <condition-simple-info :card-title="costAddTitle" describe="今日收入合计" :up="upOrDown" about-condition="较昨日上升50%"
+        <condition-simple-info :card-title="costAddTitle"
+                               describe="今日收入合计"
+                               :up="upOrDown"
+                               about-condition="较昨日上升50%"
                                :info-icon="costAddIcon"/>
       </el-col>
       <el-col class="first-row-item" :span="6" >

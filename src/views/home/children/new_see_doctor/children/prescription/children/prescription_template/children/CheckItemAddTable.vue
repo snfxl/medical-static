@@ -236,7 +236,6 @@ export default {
       }
     }
   },
-
   methods: {
     toggleSelection(rows) {
       if (rows) {

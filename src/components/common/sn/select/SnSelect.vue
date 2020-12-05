@@ -1,5 +1,5 @@
 <template>
-  <div class="select">
+  <div>
     <div class="title">
       <slot name="title"/>
     </div>
@@ -68,9 +68,5 @@ export default {
 <style scoped>
 .title {
   margin-bottom: 10px;
-}
-
-.title-level {
-  margin-right: 10px;
 }
 </style>

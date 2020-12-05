@@ -5,7 +5,7 @@
              class="margin-right"
              font-color="orange"
              font-weight="bolder"
-             font-size="30"/>
+             :font-size="30"/>
     <sn-title title="元" class="move-down"/>
     <div class="to-flex move-right">
       <router-link to="/home/drugSale/5">

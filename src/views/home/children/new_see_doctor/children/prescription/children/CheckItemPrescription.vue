@@ -6,6 +6,9 @@
       :select-data="checkItemSelectData"
       :is-check-item-prescription="true"
       :left-table-data="checkItemLeftTableData"
+      add-title="添加项目"
+      not-choose-button-name="未选中项目"
+      has-choose-button-name="已选中项目"
   />
 </template>
 

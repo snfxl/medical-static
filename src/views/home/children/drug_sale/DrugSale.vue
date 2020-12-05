@@ -2,21 +2,27 @@
 <template>
   <sn-three-col-space>
     <div slot="spaceContent">
+      <!-- 结算按钮 -->
       <div class="text-right">
         <el-button type="success" plain class="margin-bottom-20" @click="toCheckOutDrug">
           <sn-text text="结算"/>
         </el-button>
       </div>
+      <!-- 患者信息 -->
       <registration-sick-info/>
+      <!-- 药品信息 -->
       <sn-row-has-two-col :left="16" :right="8" class="margin-top-20">
-
-        <!-- 放药品的信息 -->
+        <!-- 左侧放添加药品的地方 -->
         <sn-card-with-title slot="one-col">
           <div slot="title">
             <sn-title title="药品信息"
                       :title-style="{'font-size':'40px','color':'pink'}"
                       :other-style="{'float':'right','margin-top':'10px'}">
-              <batch-setting slot="other"/>
+              <!-- 批量设置 -->
+              <batch-setting
+                  not-choose-button-name="未选中药品"
+                  has-choose-button-name="已选中药品"
+                  slot="other"/>
             </sn-title>
           </div>
           <drug-add-table
@@ -28,23 +34,25 @@
         <!-- 药品信息 -->
         <sn-card-with-title slot="two-col">
           <sn-row-has-two-col slot="title" :left="12" :right="12">
-            <div slot="one-col" class="to-flex move-down">
-              <sn-text :text="drugSelectDescription"/>
-              <sn-select :select-data="drugSelectData"
-                         class="move-up"
-                         :select-style="{'width':'120px'}"/>
+            <div slot="one-col" class="to-flex">
+              <sn-text :text="drugSelectDescription" :move-down="10"/>
+              <sn-select
+                  :select-data="drugSelectData"
+                  :select-style="{'width':'120px'}"/>
             </div>
             <sn-search-input
                 slot="two-col"
                 class="move-down"
                 :input-placeholder="inputPlaceholder"/>
           </sn-row-has-two-col>
-          <drug-table-info slot="content"
-                           :table-data="drugTableInfo"
-                           :table-title="drugTableTitle"/>
+          <drug-table-info
+              slot="content"
+              add-title="添加药品"
+              :table-data="drugTableInfo"
+              :table-title="drugTableTitle"/>
         </sn-card-with-title>
-      </sn-row-has-two-col>
 
+      </sn-row-has-two-col>
       <!-- 费用详情 -->
       <sn-card-no-title class="margin-top-20">
         <div slot="content">
@@ -53,15 +61,16 @@
               <addition-money-dialog
                   slot="other"
                   button-description="+ 附加费用"
-                  class="move-down-more"
+                  class="addition-money"
                   :table-data="otherPayData"/>
             </sn-title>
           </div>
           <div class="to-flex">
-            <sn-must-text text="操作员" class="margin-right move-down-more"/>
+            <sn-must-text text="操作员" :move-down="17" class="margin-right"/>
             <sn-select :select-data="workerData" class="margin-right-20"/>
-            <sn-text text="共计:" class="margin-right move-down-more"/>
-            <sn-text :number="totalMoney" class="font-pink move-down-total-money"/>
+            <sn-text text="共计:" :move-down="18" class="margin-right"/>
+            <sn-text :number="totalMoney" :move-down="16" :font-size="20" class="font-pink margin-right"/>
+            <sn-text text="元" :move-down="17.5"/>
           </div>
         </div>
       </sn-card-no-title>
@@ -586,7 +595,6 @@ export default {
       otherPayData: []
     }
   },
-
   methods: {
     toCheckOutDrug() {
       this.$router.push("/home/checkOutDrug/5")
@@ -596,23 +604,11 @@ export default {
 </script>
 
 <style scoped>
-.move-up {
+.move-down{
   position: relative;
-  bottom: 10px;
+  top: 10px;
 }
-
-.move-down {
-  position: relative;
-  top: 5px;
-}
-
-.move-down-more {
-  position: relative;
-  top: 17px;
-}
-
-.move-down-total-money {
-  position: relative;
-  top: 19px;
+.el-button{
+  width: 100px;
 }
 </style>
