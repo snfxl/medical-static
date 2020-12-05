@@ -8,134 +8,64 @@
              @open="handleOpen" @close="handleClose"
              :collapse="isCollapse">
       <!-- 1.经营概况-->
-      <el-submenu index="1">
-        <template slot="title" class="item-image">
-          <el-image :src="image1"/>
-        </template>
-        <el-menu-item @click="toManageCondition" class="menu-item">经营概况</el-menu-item>
-      </el-submenu>
+      <sidebar-manage-condition/>
       <!-- 2.工作台-->
-      <el-submenu index="2">
-        <template slot="title">
-          <el-image :src="image2"/>
-        </template>
-        <el-menu-item @click="toWorkSpace">工作台</el-menu-item>
-      </el-submenu>
+      <sidebar-workspace/>
       <!-- 3.新开就诊-->
-      <el-submenu index="3">
-        <template slot="title">
-          <el-image :src="image3"/>
-        </template>
-        <el-menu-item @click="toNewSeeDoctor">新开就诊</el-menu-item>
-      </el-submenu>
+      <sidebar-new-see-doctor/>
       <!-- 4.挂号管理-->
-      <el-submenu index="4">
-        <template slot="title">
-          <el-image :src="image4"/>
-        </template>
-        <el-menu-item-group>
-          <span slot="title">挂号管理</span>
-          <el-menu-item index="1-1" @click="toRegistrationManage">新增挂号</el-menu-item>
-          <el-menu-item index="1-2">挂号管理</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
+      <sidebar-registration-manage/>
       <!-- 5.药品零售-->
-      <el-submenu index="5">
-        <template slot="title">
-          <el-image :src="image5"/>
-        </template>
-        <el-menu-item @click="toDrugSale">药品零售</el-menu-item>
-      </el-submenu>
+      <sidebar-drug-sale/>
       <!-- 6.收费管理-->
-      <el-submenu index="6">
-        <template slot="title">
-          <el-image :src="image6"/>
-        </template>
-        <el-menu-item @click="toCostManage">收费管理</el-menu-item>
-      </el-submenu>
+      <sidebar-cost-manage/>
       <!-- 7.患者管理-->
-      <el-submenu index="7">
-        <template slot="title">
-          <el-image :src="image7"/>
-        </template>
-        <el-menu-item @click="toSinkPersonManage">患者管理</el-menu-item>
-      </el-submenu>
+      <sidebar-sick-manage/>
       <!-- 8.药品管理-->
-      <el-submenu index="8">
-        <template slot="title">
-          <el-image :src="image8"/>
-        </template>
-        <el-menu-item-group>
-          <span slot="title">药品管理</span>
-          <el-menu-item index="1-1" @click="toDrugManage">药品调价</el-menu-item>
-          <el-menu-item index="1-2">库存盘点</el-menu-item>
-          <el-menu-item index="1-3">库存管理</el-menu-item>
-          <el-menu-item index="1-4">出库管理</el-menu-item>
-          <el-menu-item index="1-5">入库管理</el-menu-item>
-          <el-menu-item index="1-6">药品信息维护</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
+      <sidebar-drug-manage/>
       <!-- 9.会员管理-->
-      <el-submenu index="9">
-        <template slot="title">
-          <el-image :src="image9"/>
-        </template>
-        <el-menu-item @click="toVipManage">会员管理</el-menu-item>
-      </el-submenu>
+      <sidebar-vip-manage/>
       <!-- 10.统计报表-->
-      <el-submenu index="10">
-        <template slot="title">
-          <el-image :src="image10"/>
-        </template>
-        <el-menu-item-group>
-          <span slot="title">统计报表</span>
-          <el-menu-item index="1-1" @click="toStatisticsTable">药品统计</el-menu-item>
-          <el-menu-item index="1-2">检查项目统计</el-menu-item>
-          <el-menu-item index="1-3">患者统计</el-menu-item>
-          <el-menu-item index="1-4">收费统计</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
+      <sidebar-statistics-table/>
       <!-- 11.系统设置-->
-      <el-submenu index="11">
-        <template slot="title">
-          <el-image :src="image11"/>
-        </template>
-        <el-menu-item-group>
-          <span slot="title">系统设置</span>
-          <el-menu-item index="1-1" @click="toSystemSetting">基础设置</el-menu-item>
-          <el-menu-item index="1-2" @click="toSystemSetting">费用设置</el-menu-item>
-          <el-menu-item index="1-3">模板维护</el-menu-item>
-          <el-menu-item index="1-4">供应商管理</el-menu-item>
-          <el-menu-item index="1-5">检查项目设置</el-menu-item>
-          <el-menu-item index="1-6">员工管理</el-menu-item>
-          <el-menu-item index="1-7">字典表维护</el-menu-item>
-          <el-menu-item index="1-8">诊所信息维护</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
+      <sidebar-system-setting/>
     </el-menu>
   </div>
 </template>
 
 <script>
+import SidebarManageCondition from "@/views/home/children/sidebar/children/SidebarManageCondition";
+import SidebarNewSeeDoctor from "@/views/home/children/sidebar/children/SidebarNewSeeDoctor";
+import SidebarWorkspace from "@/views/home/children/sidebar/children/SidebarWorkspace";
+import SidebarRegistrationManage from "@/views/home/children/sidebar/children/SidebarRegistrationManage";
+import SidebarDrugSale from "@/views/home/children/sidebar/children/SidebarDrugSale";
+import SidebarCostManage from "@/views/home/children/sidebar/children/SidebarCostManage";
+import SidebarSickManage from "@/views/home/children/sidebar/children/SidebarSickManage";
+import SidebarDrugManage from "@/views/home/children/sidebar/children/SidebarDrugManage";
+import SidebarVipManage from "@/views/home/children/sidebar/children/SidebarVipManage";
+import SidebarStatisticsTable from "@/views/home/children/sidebar/children/SidebarStatisticsTable";
+import SidebarSystemSetting from "@/views/home/children/sidebar/children/SidebarSystemSetting";
+
 export default {
   name: "SideBar",
-  components: {},
+  components: {
+    SidebarSickManage,
+    SidebarCostManage,
+    SidebarDrugSale,
+    SidebarRegistrationManage,
+    SidebarNewSeeDoctor,
+    SidebarWorkspace,
+    SidebarManageCondition,
+    SidebarDrugManage,
+    SidebarVipManage,
+    SidebarStatisticsTable,
+    SidebarSystemSetting
+  },
   data() {
     return {
       //侧边栏相关
       isCollapse: true,
       image0: require('@/assets/image/home/sidebar/home0.png'),
-      image1: require('@/assets/image/home/sidebar/home1.png'),
-      image2: require('@/assets/image/home/sidebar/home2.png'),
-      image3: require('@/assets/image/home/sidebar/home3.png'),
-      image4: require('@/assets/image/home/sidebar/home4.png'),
-      image5: require('@/assets/image/home/sidebar/home5.png'),
-      image6: require('@/assets/image/home/sidebar/home6.png'),
-      image7: require('@/assets/image/home/sidebar/home7.png'),
-      image8: require('@/assets/image/home/sidebar/home8.png'),
-      image9: require('@/assets/image/home/sidebar/home9.png'),
-      image10: require('@/assets/image/home/sidebar/home10.png'),
-      image11: require('@/assets/image/home/sidebar/home11.png'),
       fit: 'fill'
     }
   },
@@ -146,51 +76,6 @@ export default {
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
-    },
-    //路由相关
-    //1 经营概况
-    toManageCondition() {
-      this.$router.push("/home/manageCondition/0")
-    },
-    //2 收费管理
-    toCostManage() {
-      this.$router.push("/home/costManage")
-    },
-    //3 药品零售
-    toDrugSale() {
-      this.$router.push("/home/drugSale")
-    },
-    //4 新开就诊
-    toNewSeeDoctor() {
-      this.$router.push("/home/newSeeDoctor/2")
-    },
-    //5 挂号管理
-    toRegistrationManage() {
-      this.$router.push("/home/registrationManage")
-    },
-    //6 患者管理
-    toSinkPersonManage() {
-      this.$router.push("/home/sinkPersonManage")
-    },
-    //7 统计报表
-    toStatisticsTable() {
-      this.$router.push("/home/statisticsTable")
-    },
-    //8 系统设置
-    toSystemSetting() {
-      this.$router.push("/home/systemSetting")
-    },
-    //9 会员管理
-    toVipManage() {
-      this.$router.push("/home/vipManage")
-    },
-    //10 工作空间
-    toWorkSpace() {
-      this.$router.push("/home/workSpace/1")
-    },
-    //11 药品管理
-    toDrugManage() {
-      this.$router.push("/home/drugManage")
     },
   }
 }
@@ -216,11 +101,6 @@ export default {
   .title-img {
     margin-top: 6px;
   }
-}
-
-span {
-  color: pink;
-  font-size: 16px;
 }
 
 </style>
