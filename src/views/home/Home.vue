@@ -2,7 +2,7 @@
   <div>
     <el-container>
       <el-aside width="50px">
-        <side-bar/>
+        <sidebar/>
       </el-aside>
       <el-container>
         <el-header class="header-bar">
@@ -18,13 +18,13 @@
 </template>
 
 <script>
-import SideBar from "@/views/home/children/sidebar/SideBar";
+import Sidebar from "@/views/home/children/sidebar/Sidebar";
 import HeaderBar from "@/views/home/children/header_bar/HeaderBar";
 
 export default {
   name: "Home",
   components: {
-    SideBar, HeaderBar
+    Sidebar, HeaderBar
   }
 }
 </script>

@@ -4,8 +4,7 @@
       :right-table-title="westDrugInfoTableTitle"
       :select-data="westDrugInfoSelectData"
       :select-description="westDrugInfoSelectDescription"
-      :left-table-data="westDrugAddTableData"
-  />
+      :left-table-data="westDrugAddTableData"/>
 </template>
 
 <script>

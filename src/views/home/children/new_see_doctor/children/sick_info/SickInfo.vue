@@ -6,28 +6,28 @@
       <el-button type="danger" plain size="medium" @click="toShowSickCase">病例</el-button>
     </div>
     <div slot="content">
-      <sink-info-first-row ref="first"></sink-info-first-row>
-      <sink-info-second-row ref="second"></sink-info-second-row>
-      <sink-info-third-row></sink-info-third-row>
-      <sink-info-fourth-row></sink-info-fourth-row>
+      <sick-info-first-row ref="first"></sick-info-first-row>
+      <sick-info-second-row ref="second"></sick-info-second-row>
+      <sick-info-third-row></sick-info-third-row>
+      <sick-info-fourth-row></sick-info-fourth-row>
     </div>
   </sn-card-with-title>
 </template>
 
 <script>
-import SinkInfoFirstRow from "@/views/home/children/new_see_doctor/children/sink_info/children/SinkInfoFirstRow";
-import SinkInfoSecondRow from "@/views/home/children/new_see_doctor/children/sink_info/children/SinkInfoSecondRow";
-import SinkInfoThirdRow from "@/views/home/children/new_see_doctor/children/sink_info/children/SinkInfoThirdRow";
-import SinkInfoFourthRow from "@/views/home/children/new_see_doctor/children/sink_info/children/SinkInfoFourthRow";
+import SickInfoFirstRow from "@/views/home/children/new_see_doctor/children/sick_info/children/SickInfoFirstRow";
+import SickInfoSecondRow from "@/views/home/children/new_see_doctor/children/sick_info/children/SickInfoSecondRow";
+import SickInfoThirdRow from "@/views/home/children/new_see_doctor/children/sick_info/children/SickInfoThirdRow";
+import SickInfoFourthRow from "@/views/home/children/new_see_doctor/children/sick_info/children/SickInfoFourthRow";
 import {addSink} from "@/api/sinkInfo";
 import {dateFormat} from "@/utils/date";
 
 export default {
   components: {
-    SinkInfoFirstRow,
-    SinkInfoSecondRow,
-    SinkInfoThirdRow,
-    SinkInfoFourthRow
+    SickInfoFirstRow,
+    SickInfoSecondRow,
+    SickInfoThirdRow,
+    SickInfoFourthRow
   },
   data() {
     return {

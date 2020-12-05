@@ -12,7 +12,7 @@
       <sn-must-text text="证件号码" slot="title"/>
     </sn-input>
 
-    <sn-select slot="four-col" :select-data="diagnoseType" ref="clinicType">
+    <sn-select slot="four-col" :select-data="diagnoseType" ref="clinicType" v-if="showIt">
       <sn-must-text text="接诊类型" slot="title"/>
     </sn-select>
   </sn-row-has-four-col>
@@ -33,7 +33,7 @@ export default {
         },
       ],
       //接诊类型
-      diagnoseType:[
+      diagnoseType: [
         {
           value: 0,
           label: '初诊'
@@ -43,6 +43,12 @@ export default {
           label: '复诊'
         },
       ]
+    }
+  },
+  props: {
+    showIt: {
+      type: Boolean,
+      default: true
     }
   }
 }

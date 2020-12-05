@@ -3,7 +3,11 @@
     <div class="title">
       <slot name="title"/>
     </div>
-    <el-select v-model="value" :placeholder="selectPlaceholder" :style="selectStyle">
+    <el-select
+        v-model="value"
+        :disabled="disabledSelect"
+        :placeholder="selectPlaceholder"
+        :style="selectStyle">
       <el-option
           v-for="item in selectData"
           :key="item.value"
@@ -25,11 +29,16 @@ export default {
 
   computed: {
     getNowSelect() {
-      return this.utils.getSelectOption(this.value,this.selectData)
+      return this.utils.getSelectOption(this.value, this.selectData)
     }
   },
 
   props: {
+    //是否禁用
+    disabledSelect: {
+      type: Boolean,
+      default: false
+    },
     selectStyle: {
       type: Object,
       default() {

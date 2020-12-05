@@ -1,11 +1,9 @@
 <!-- 处方 -->
 <template>
-  <div>
-    <sn-down-has-tabs :down-data="downData">
-      <sn-text text="选择处方" slot="title">
-      </sn-text>
-    </sn-down-has-tabs>
-  </div>
+  <sn-down-has-tabs :down-data="downData">
+    <sn-text text="选择处方" slot="title">
+    </sn-text>
+  </sn-down-has-tabs>
 </template>
 
 <script>
@@ -26,5 +24,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

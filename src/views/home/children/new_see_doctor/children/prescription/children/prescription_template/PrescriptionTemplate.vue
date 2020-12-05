@@ -14,17 +14,14 @@
         <check-item-add-table slot="content"
                               v-if="isCheckItemPrescription"
                               :table-data="leftTableData"
-                              :has-add-button="false"
-        />
+                              :has-add-button="false"/>
         <drug-add-table slot="content"
                         :has-add-button="false"
                         :table-data="leftTableData"
                         :table-title="leftTableTitle"
-                        v-else
-        />
-
-
+                        v-else/>
       </sn-card-with-title>
+
       <!-- 药品信息相关选择 -->
       <sn-card-with-title slot="two-col">
         <sn-row-has-two-col slot="title" :left="12" :right="12">
@@ -44,8 +41,7 @@
         <money-detail/>
         <el-button type="success"
                    plain slot="other"
-                   class="margin-top margin-bottom float-right"
-        >
+                   class="margin-top margin-bottom float-right">
           <sn-text text="添加处方"/>
         </el-button>
       </div>
@@ -61,7 +57,7 @@ import DrugAddTable
 import MoneyDetail
   from "@/views/home/children/new_see_doctor/children/prescription/children/prescription_template/children/MoneyDetail";
 import BatchSetting
-  from "@/views/home/children/new_see_doctor/children/prescription/children/prescription_template/children/BatchSetting";
+  from "@/views/home/children/new_see_doctor/children/prescription/children/prescription_template/children/batch_setting/BatchSetting";
 import CheckItemAddTable
   from "@/views/home/children/new_see_doctor/children/prescription/children/prescription_template/children/CheckItemAddTable";
 

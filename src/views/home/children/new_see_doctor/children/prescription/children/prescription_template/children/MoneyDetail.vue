@@ -76,15 +76,15 @@ export default {
       default() {
         return [
           {
-            value: 1,
+            value: 0,
             label: '全科'
           },
           {
-            value: 2,
+            value: 1,
             label: '儿科'
           },
           {
-            value: 3,
+            value: 2,
             label: '骨科'
           }
         ]
@@ -95,15 +95,15 @@ export default {
       default() {
         return [
           {
-            value: 1,
+            value: 0,
             label: '王阳明'
           },
           {
-            value: 2,
+            value: 1,
             label: '陈平安'
           },
           {
-            value: 3,
+            value: 2,
             label: '宁姚'
           }
         ]

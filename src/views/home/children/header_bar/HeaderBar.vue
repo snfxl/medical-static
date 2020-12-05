@@ -1,6 +1,6 @@
 <template>
   <div class="header-bar">
-    <span class="home-title">{{ getHomeTitle[$route.params.homePart] }}</span>
+    <span class="home-title">{{ getHomeTitle[$route.params.homeTitleIndex] }}</span>
     <el-dropdown>
           <span class="el-dropdown-link">
             <el-image :src="headImg"></el-image>

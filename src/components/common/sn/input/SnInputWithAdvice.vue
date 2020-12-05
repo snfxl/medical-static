@@ -7,7 +7,7 @@
         class="inline-input"
         v-model="state"
         :fetch-suggestions="querySearch"
-        placeholder="请输入内容"
+        placeholder=""
         @select="handleSelect"
         style="width: 100%">
     </el-autocomplete>

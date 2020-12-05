@@ -4,18 +4,21 @@
     <div slot="spaceContent">
       <sick-info @showPrescription="showPrescription" @showSickCase="showSickCase"/>
       <prescription v-if="isShowPrescription"/>
+      <sick-case v-if="isShowSickCase"/>
     </div>
   </sn-three-col-space>
 </template>
 
 <script>
 import Prescription from "@/views/home/children/new_see_doctor/children/prescription/Prescription";
-import SickInfo from "@/views/home/children/new_see_doctor/children/sink_info/SickInfo";
+import SickInfo from "@/views/home/children/new_see_doctor/children/sick_info/SickInfo";
+import SickCase from "@/views/home/children/new_see_doctor/children/sick_case/SickCase";
 
 export default {
   components: {
     Prescription,
-    SickInfo
+    SickInfo,
+    SickCase
   },
   data() {
     return {

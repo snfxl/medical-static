@@ -3,7 +3,14 @@
     <div class="title">
       <slot name="title"/>
     </div>
-    <el-input v-model="inputValue" :style="inputStyle" :placeholder="inputPlaceholder"></el-input>
+    <el-input v-model="inputValue"
+              :style="inputStyle"
+              :placeholder="inputPlaceholder"
+              :disabled="isDisabled">
+    </el-input>
+    <div class="input-after">
+      <slot name="input-after"/>
+    </div>
   </div>
 </template>
 
@@ -12,11 +19,16 @@ export default {
 
   data() {
     return {
-      inputValue: ''
+      inputValue: this.inputValueFromParent,
     }
   },
 
   props: {
+    //是否禁用
+    isDisabled: {
+      type: Boolean,
+      default: false
+    },
     inputPlaceholder: {
       type: String,
       default: ''
@@ -28,6 +40,10 @@ export default {
           'width': '100%'
         }
       }
+    },
+    inputValueFromParent: {
+      type: String,
+      default: ''
     }
   }
 }
@@ -39,6 +55,10 @@ export default {
 }
 
 .sn-input {
+  margin-right: 5px;
+}
+
+.input-after {
   margin-right: 5px;
 }
 </style>

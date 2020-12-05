@@ -1,11 +1,21 @@
 <template>
-  <div class="workspace-top-bar">
-    <sn-date-picker-with-round/>
-    <sn-text text="接诊状态" class="description"/>
-    <sn-select :select-placeholder="selectPlaceholder" :select-data="selectData" class="select">
+  <sn-row-has-four-col
+      :one="8" :two="6" :three="4">
+    <sn-date-picker-with-round class="to-flex" slot="one-col">
+      <sn-text text="创建时间" slot="title" class="move-down" :style="{'width':'65px'}"/>
+    </sn-date-picker-with-round>
+    <sn-select
+        :select-placeholder="selectPlaceholder"
+        :select-data="selectData"
+        class="to-flex margin-right move-down-little"
+        slot="two-col">
+      <sn-text text="接诊状态" class="move-down" slot="title" :style="{'width':'65px'}"/>
     </sn-select>
-    <sn-search-input class="sn-search-input"/>
-  </div>
+    <sn-search-input
+        class="move-down-little"
+        input-placeholder="输入患者姓名"
+        slot="three-col"/>
+  </sn-row-has-four-col>
 </template>
 
 <script>
@@ -38,26 +48,12 @@ export default {
 </script>
 
 <style scoped lang="less">
-.workspace-top-bar {
-  display: flex;
-  padding-left: 20px;
-  margin-bottom: 10px;
-
-  .select {
-    margin-right: 20px;
-    position: relative;
-    bottom: 8px;
-  }
-
-  .sn-search-input {
-    position: relative;
-    top: 2px;
-  }
-
-  .description {
-    position: relative;
-    margin-right: 10px;
-    top: 12px;
-  }
+.move-down {
+  position: relative;
+  top: 12px;
+}
+.move-down-little{
+  position: relative;
+  top: 3px;
 }
 </style>

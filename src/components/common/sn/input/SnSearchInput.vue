@@ -1,10 +1,15 @@
 <template>
   <div class="demo-input-suffix">
+    <div class="title">
+      <slot name="title"/>
+    </div>
     <el-input
         :placeholder="inputPlaceholder"
-        prefix-icon="el-icon-search"
+        suffix-icon="el-icon-search"
         v-model="input"
-        :style="{'width': '100%','font-size':'12px'}">
+        :style="inputStyle"
+        class="input"
+        :type="inputType">
     </el-input>
   </div>
 </template>
@@ -20,12 +25,25 @@ export default {
   props: {
     inputPlaceholder: {
       type: String,
-      default: '输入患者姓名'
+      default: ''
+    },
+    inputStyle: {
+      type: Object,
+      default() {
+        return {}
+      }
+    },
+    inputType: {
+      type: String,
+      default: ''
     }
   }
 }
 </script>
 
 <style scoped>
-
+.input {
+  width: 100%;
+  font-size: 12px;
+}
 </style>

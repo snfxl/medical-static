@@ -8,7 +8,7 @@
 
 <script>
 import BatchSettingDialog
-  from "@/views/home/children/new_see_doctor/children/prescription/children/prescription_template/children/BatchSettingDialog";
+  from "@/views/home/children/new_see_doctor/children/prescription/children/prescription_template/children/batch_setting/BatchSettingDialog";
 
 export default {
   components: {
@@ -38,6 +38,6 @@ export default {
 <style scoped>
 .move-down{
   position: relative;
-  top: 3px;
+  top: 4px;
 }
 </style>

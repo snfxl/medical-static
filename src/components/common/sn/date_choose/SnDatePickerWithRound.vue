@@ -1,6 +1,8 @@
 <template>
   <div class="block sn-date-picker">
-    <span class="description">创建时间</span>
+    <div>
+      <slot name="title"></slot>
+    </div>
     <el-date-picker
         v-model="value"
         type="daterange"
@@ -10,6 +12,7 @@
         end-placeholder="结束日期"
         :picker-options="pickerOptions"
         :editable="false"
+        :style="datePickerStyle"
     >
     </el-date-picker>
   </div>
@@ -17,9 +20,6 @@
 
 <script>
 export default {
-  methods: {},
-  mounted() {
-  },
   data() {
     return {
       value: [],
@@ -101,19 +101,21 @@ export default {
       },
     };
   },
+  props:{
+    datePickerStyle:{
+      type:Object,
+      default(){
+        return{
 
+        }
+      }
+    }
+  }
 }
 </script>
 
 <style scoped lang="less">
 .sn-date-picker {
-  //日期选择器描述内容
-  .description {
-    font-size: 14px;
-    margin-right: 20px;
-    position: relative;
-    top: 1px;
-  }
 
   //日期选择器
   .el-date-editor--daterange.el-input__inner {

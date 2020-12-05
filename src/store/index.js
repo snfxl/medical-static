@@ -7,7 +7,8 @@ import mutations from "@/store/mutations";
 Vue.use(Vuex)
 const state = {
   homeTitle:[
-    '经营概况','工作台','新开就诊'
+    '经营概况','工作台','新开就诊',
+    '新增挂号','挂号记录','药品零售'
   ],
   user: {
     username: "忆生"

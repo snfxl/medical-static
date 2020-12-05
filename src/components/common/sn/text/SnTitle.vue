@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span :style="titleStyle">
+    <span class="title" :style="titleStyle">
       {{ title }}
     </span>
     <span :style="otherStyle">
@@ -13,6 +13,10 @@
 export default {
   name: "Title",
   props: {
+    message: {
+      type: String,
+      default: ''
+    },
     title: {
       type: String,
       default: ''
@@ -34,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-span {
+.title {
   font-size: 18px;
   font-weight: bold;
 }

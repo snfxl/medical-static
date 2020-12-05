@@ -2,6 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
 //1. 登录
 const Login = () => import("@/views/login/Longin")
 //2. 注册
@@ -14,10 +19,19 @@ const ManageCondition = () => import("@/views/home/children/manage_condition/Man
 const CostManage = () => import("@/views/home/children/cost_manage/CostManage")
 //3.3 药品零售
 const DrugSale = () => import("@/views/home/children/drug_sale/DrugSale")
+//药品结算
+const CheckOutDrug = () => import ("@/views/home/children/drug_sale/CheckOutDrug")
+
 //3.4 新开就诊
 const NewSeeDoctor = () => import("@/views/home/children/new_see_doctor/NewSeeDoctor")
 //3.5 挂号管理
-const RegistrationManage = () => import("@/views/home/children/registration_manage/RegistrationManage")
+//新增挂号
+const NewAddRegistration = () => import("@/views/home/children/registration_manage/new_add_registration/NewAddRegistration")
+//挂号记录
+const RegistrationRecord = () => import("@/views/home/children/registration_manage/registration_record/RegistrationRecord")
+//编辑挂号信息
+const EditRegistrationInfo = () => import("@/views/home/children/registration_manage/registration_record/children/editRegistrationInfo/EditRegistrationInfo")
+
 //3.6 患者管理
 const SinkPersonManage = () => import("@/views/home/children/sick_manage/SickManage")
 //3.7 统计报表
@@ -54,7 +68,7 @@ const routes = [
     children: [
       {
         //3.1 经营概况
-        path: 'manageCondition/:homePart',
+        path: 'manageCondition/:homeTitleIndex',
         component: ManageCondition
       },
       {
@@ -64,18 +78,33 @@ const routes = [
       },
       {
         //3.3 药品零售
-        path: 'drugSale',
+        path: 'drugSale/:homeTitleIndex',
         component: DrugSale
       },
       {
-        //3.4 新开就诊
-        path: 'newSeeDoctor/:homePart',
-        component: NewSeeDoctor
+        path: 'checkOutDrug/:homeTitleIndex',
+        component: CheckOutDrug
       },
       {
-        //3.5 挂号管理
-        path: 'registrationManage',
-        component: RegistrationManage
+        //3.4 新开就诊
+        path: 'newSeeDoctor/:homeTitleIndex',
+        component: NewSeeDoctor
+      },
+      //3.5 挂号管理
+      {
+        //新增挂号
+        path: 'newAddRegistration/:homeTitleIndex',
+        component: NewAddRegistration
+      },
+      {
+        //挂号记录
+        path: 'registrationRecord/:homeTitleIndex',
+        component: RegistrationRecord
+      },
+      {
+        //编辑挂号信息
+        path: 'editRegistrationInfo/:homeTitleIndex',
+        component: EditRegistrationInfo
       },
       {
         //3.6 患者管理
@@ -99,12 +128,12 @@ const routes = [
       },
       {
         //3.10 工作空间
-        path: 'workSpace/:homePart',
+        path: 'workSpace/:homeTitleIndex',
         component: WorkSpace
       },
       {
         //3.11 药品管理
-        path: 'drugManage',
+        path: 'drugManage/:homeTitleIndex',
         component: DrugManage
       },
     ]

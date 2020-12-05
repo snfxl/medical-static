@@ -20,8 +20,8 @@
 
 <script>
 
-export default {}
 </script>
+export default {}
 
 <style scoped lang="less">
 

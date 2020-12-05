@@ -1,21 +1,21 @@
 <template>
   <el-row :gutter="10" class="row-has-four-col">
-    <el-col :span="6">
+    <el-col :span="one">
       <div>
         <slot name="one-col"/>
       </div>
     </el-col>
-    <el-col :span="6">
+    <el-col :span="two">
       <div>
         <slot name="two-col"/>
       </div>
     </el-col>
-    <el-col :span="6">
+    <el-col :span="three">
       <div>
         <slot name="three-col"/>
       </div>
     </el-col>
-    <el-col :span="6">
+    <el-col :span="four">
       <div>
         <slot name="four-col"/>
       </div>
@@ -25,7 +25,25 @@
 
 <script>
 export default {
-  name: "RowHasFourCol"
+  name: "RowHasFourCol",
+  props:{
+    one:{
+      type:Number,
+      default: 6
+    },
+    two:{
+      type:Number,
+      default: 6
+    },
+    three:{
+      type:Number,
+      default: 6
+    },
+    four:{
+      type:Number,
+      default: 6
+    },
+  }
 }
 </script>
 

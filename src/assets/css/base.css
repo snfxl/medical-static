@@ -42,29 +42,50 @@ a {
     margin-right: 10px;
 }
 
+.margin-right-20 {
+    margin-right: 20px;
+}
+
 .margin-left {
     margin-left: 10px;
+}
+
+.margin-left-20 {
+    margin-left: 20px;
 }
 
 .margin-top {
     margin-top: 10px;
 }
 
+.margin-top-20 {
+    margin-top: 20px;
+}
+
 .margin-bottom {
     margin-bottom: 10px;
 }
 
-.text-center{
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+.text-center {
     text-align: center;
 }
-.text-right{
+
+.text-right {
     text-align: right;
 }
 
-.float-right{
+.text-left {
+    text-align: left;
+}
+
+.float-right {
     float: right;
 }
 
-.float-left{
+.float-left {
     float: left;
 }

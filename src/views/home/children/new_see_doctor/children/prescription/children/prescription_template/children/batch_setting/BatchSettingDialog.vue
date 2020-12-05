@@ -65,7 +65,6 @@
 
 <script>
 export default {
-  name: "SnDialogHasTable",
   data() {
     return {
       multipleSelection: []

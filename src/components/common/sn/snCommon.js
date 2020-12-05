@@ -21,10 +21,14 @@ import SnThreeColSpace from "@/components/common/sn/layout/SnThreeColSpace";
 import SnTitle from "@/components/common/sn/text/SnTitle";
 import SnDownHasTabs from "@/components/common/sn/tabs/SnDownHasTabs";
 import SnImageInCircle from "@/components/common/sn/avatar/SnImageInCircle";
+import SnFlexAppointElement from "@/components/common/sn/flex/SnFlexAppointElement";
+import SnDivHasBorder from "@/components/common/sn/div/SnDivHasBorder";
 
 export default {
   install(Vue) {
-    Vue.component('SnImageInCircle',SnImageInCircle)
+    Vue.component('SnDivHasBorder', SnDivHasBorder)
+    Vue.component('SnFlexAppointElement', SnFlexAppointElement)
+    Vue.component('SnImageInCircle', SnImageInCircle)
     Vue.component('SnDownHasTabs', SnDownHasTabs)
     Vue.component('SnInput', SnInput)
     Vue.component('SnCardNoTitle', SnCardNoTitle)

@@ -1,7 +1,10 @@
 <template>
   <div>
-    <span :style="setStyle">
+    <span :style="setStyle" v-if="text">
       {{ text }}
+    </span>
+    <span :style="setStyle" v-else>
+      {{ number }}
     </span>
     <span>
       <slot name="other"/>
@@ -15,9 +18,11 @@ export default {
   computed: {
     setStyle() {
       return {
-        'font-size': this.fontSize + 'px'
+        'font-size': this.fontSize + 'px',
+        'color': this.fontColor,
+        'font-weight': this.fontWeight
       }
-    }
+    },
   },
   props: {
     text: {
@@ -28,9 +33,17 @@ export default {
       type: String,
       default: '14'
     },
+    fontWeight:{
+      type: String,
+      default: ''
+    },
     number: {
       type: Number,
       default: 0
+    },
+    fontColor: {
+      type: String,
+      default: ''
     }
   }
 }
