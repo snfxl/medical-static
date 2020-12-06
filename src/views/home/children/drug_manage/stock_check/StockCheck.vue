@@ -3,26 +3,44 @@
   <sn-three-col-space>
     <sn-card-with-title slot="spaceContent">
 
+      <!-- 库存盘点记录 -->
       <stock-check-record-title
           slot="title"
           v-if="showCheckRecord"/>
 
-      <div slot="content">
-        <stock-check-find-info-bar/>
+      <!-- 完成库存盘点 -->
 
-        <!-- 库存盘点记录表格 -->
+
+      <!-- 正在进行库存盘点 -->
+
+      <div slot="content">
+
+        <!-- 库存盘点记录 -->
+        <stock-check-find-info-bar
+            v-if="showCheckRecord"
+            input-placeholder="输入盘点单号"/>
+
         <stock-check-record-table
             v-if="showCheckRecord"
             @lookCheckDetailOnFinish="lookCheckDetailOnFinish"
             @lookCheckDetailOnCurrent="lookCheckDetailOnCurrent"
             :table-data="stockCheckRecordTableData"/>
 
-        <!-- 完成库存盘点的表格 -->
+        <!-- 完成库存盘点 -->
+        <stock-check-find-info-bar
+            v-if="showFinishCheckInfo"
+            input-placeholder="输入药品名称/编码/生产厂家"/>
+
         <finish-check-table
             v-if="showFinishCheckInfo"
             :table-data="finishCheckTableData"/>
 
-        <!-- 正在进行库存盘点的表格 -->
+
+        <!-- 正在进行库存盘点 -->
+        <stock-check-find-info-bar
+            v-if="showCurrentCheckInfo"
+            input-placeholder="输入盘点单号"/>
+
         <current-check-table
             v-if="showCurrentCheckInfo"
             :table-data="currentCheckTableDat"/>

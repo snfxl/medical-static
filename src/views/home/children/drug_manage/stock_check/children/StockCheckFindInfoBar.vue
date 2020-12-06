@@ -7,7 +7,7 @@
       <sn-text text="创建时间" slot="title" :move-down="12" class="margin-right-20 move-down-date"/>
     </sn-date-picker-with-round>
     <sn-search-input
-        input-placeholder="输入盘点单号"
+        :input-placeholder="inputPlaceholder"
         slot="two-col" class="move-down-little"/>
   </sn-row-has-four-col>
 </template>
@@ -17,6 +17,12 @@ export default {
   name: "DrugChangePriceFindInfoBar",
   data() {
     return {}
+  },
+  props: {
+    inputPlaceholder: {
+      type: String,
+      default: ''
+    },
   },
 }
 </script>
