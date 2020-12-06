@@ -1,13 +1,11 @@
-<!-- 药品管理-->
+<!-- 出库管理-->
 <template>
-<div>
-  药品管理
-</div>
+<div>出库管理</div>
 </template>
 
 <script>
 export default {
-name: "DrugManage"
+  name: "OutStockManage"
 }
 </script>
 

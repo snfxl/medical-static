@@ -18,8 +18,7 @@
           }"
           :header-cell-style="{
              'text-align': 'center',
-          }"
-      >
+          }">
         <el-table-column prop="id" label="序号" width="50"/>
         <el-table-column prop="caseContent" label="病例内容" width="400"/>
         <el-table-column prop="createTime" label="创建时间" width="180"/>
@@ -190,6 +189,6 @@ export default {
   color: #999999;
   position: relative;
   bottom: 60px;
-  left: 520px;
+  left: 620px;
 }
 </style>

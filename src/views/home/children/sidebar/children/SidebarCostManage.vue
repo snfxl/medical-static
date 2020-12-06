@@ -19,7 +19,7 @@ export default {
   methods: {
     //2 收费管理
     toCostManage() {
-      this.$router.push("/home/costManage")
+      this.$router.push("/home/costManage/6")
     },
   }
 }

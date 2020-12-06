@@ -28,6 +28,6 @@ export default {
 
 <style scoped>
 .to-right {
-  margin-left: 700px;
+  margin-left: 900px;
 }
 </style>

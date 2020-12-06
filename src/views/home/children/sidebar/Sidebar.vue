@@ -47,7 +47,7 @@ import SidebarStatisticsTable from "@/views/home/children/sidebar/children/Sideb
 import SidebarSystemSetting from "@/views/home/children/sidebar/children/SidebarSystemSetting";
 
 export default {
-  name: "SideBar",
+  name: "Sidebar",
   components: {
     SidebarSickManage,
     SidebarCostManage,

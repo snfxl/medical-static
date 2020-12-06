@@ -15,7 +15,7 @@
 <script>
 import CostManageTitle from "@/views/home/children/cost_manage/children/CostManageTitle";
 import CostManageFindInfoBar from "@/views/home/children/cost_manage/children/CostManageFindInfoBar";
-import CostManageTable from "@/views/home/children/cost_manage/children/cost_manage_table/CostManageTable";
+import CostManageTable from "@/views/home/children/cost_manage/children/CostManageTable";
 
 export default {
   name: "CostManage",
@@ -30,7 +30,7 @@ export default {
         {
           id: 1,
           orderId: '12166565123',
-          orderType:'药品零售',
+          orderType: '药品零售',
           name: '陈平安',
           sex: '男',
           age: 12,
@@ -40,7 +40,9 @@ export default {
           createDate: '1996-12-25 12:05:12',
           needMoney: 12.03,
           actualMoney: 12.03,
-          costStatus: '已收费',
+          costStatus: '待收费',
+          payMethod: '支付宝',
+          returnMoney: 10
         },
       ]
     }

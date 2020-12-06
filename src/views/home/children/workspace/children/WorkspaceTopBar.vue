@@ -1,18 +1,18 @@
 <template>
   <sn-row-has-four-col
-      :one="8" :two="6" :three="4">
-    <sn-date-picker-with-round class="to-flex" slot="one-col">
-      <sn-text text="创建时间" slot="title" class="move-down" :style="{'width':'65px'}"/>
+      :one="7" :two="6" :three="4">
+    <sn-date-picker-with-round class="to-flex margin-left-20" slot="one-col">
+      <sn-text text="创建时间" slot="title" :move-down="12" :style="{'width':'65px'}"/>
     </sn-date-picker-with-round>
     <sn-select
         :select-placeholder="selectPlaceholder"
         :select-data="selectData"
         class="to-flex margin-right move-down-little"
         slot="two-col">
-      <sn-text text="接诊状态" class="move-down" slot="title" :style="{'width':'65px'}"/>
+      <sn-text text="接诊状态" :move-down="10" slot="title" :style="{'width':'65px'}"/>
     </sn-select>
     <sn-search-input
-        class="move-down-little"
+        class="move-down"
         input-placeholder="输入患者姓名"
         slot="three-col"/>
   </sn-row-has-four-col>
@@ -50,7 +50,7 @@ export default {
 <style scoped lang="less">
 .move-down {
   position: relative;
-  top: 12px;
+  top: 2px;
 }
 .move-down-little{
   position: relative;

@@ -24,7 +24,7 @@ import HeaderBar from "@/views/home/children/header_bar/HeaderBar";
 export default {
   name: "Home",
   components: {
-    Sidebar, HeaderBar
+    HeaderBar, Sidebar,
   }
 }
 </script>
@@ -45,12 +45,13 @@ export default {
 .el-header {
   line-height: 75px/1.25;
 }
+
 //分割线
-.el-divider{
+.el-divider {
   margin-top: 0;
 }
 
-.el-main{
+.el-main {
   padding-top: 0;
   padding-bottom: 0;
 }

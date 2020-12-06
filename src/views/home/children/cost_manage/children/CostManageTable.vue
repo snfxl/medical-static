@@ -7,12 +7,12 @@
                 'background-color':'#ECF5FF'
               }"
         :cell-style="{'text-align':'center'}">
-      <el-table-column prop="id" label="序号" width="40"></el-table-column>
+      <el-table-column prop="id" label="序号" width="40" ></el-table-column>
       <el-table-column prop="orderId" label="订单编号" width="110px"/>
       <el-table-column prop="orderType" label="订单类型"/>
       <el-table-column prop="name" label="患者姓名"/>
-      <el-table-column prop="sex" label="性别" width="40"/>
-      <el-table-column prop="age" label="年龄" width="40"/>
+      <el-table-column prop="sex" label="性别" />
+      <el-table-column prop="age" label="年龄"/>
       <el-table-column prop="phoneNumber" label="手机号码" width="110px"/>
       <el-table-column prop="department" label="科室"/>
       <el-table-column prop="doctor" label="接诊医生"/>
@@ -33,6 +33,11 @@
           v-if="nowCostStatus === '已收费'"
           prop="payMethod"
           label="支付方式"/>
+
+      <el-table-column
+          v-if="nowCostStatus === '已退费'"
+          prop="returnMoney"
+          label="退费金额(元)"/>
 
       <el-table-column prop="costStatus" label="收费状态">
         <template slot-scope="scope">
@@ -110,9 +115,6 @@ export default {
     getPageData(pageData) {
       this.pageData = pageData
     },
-    test() {
-      console.log(this.pageData[0])
-    }
   },
 
 }

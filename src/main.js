@@ -7,6 +7,7 @@ Vue.config.productionTip = false
 
 //注册到vue中 任何一个vue组件都可以使用
 import * as utils from '@/utils/utils'
+
 Vue.prototype.utils = utils
 
 //引入element ui

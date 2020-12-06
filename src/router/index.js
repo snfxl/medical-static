@@ -33,7 +33,12 @@ const RegistrationRecord = () => import("@/views/home/children/registration_mana
 const EditRegistrationInfo = () => import("@/views/home/children/registration_manage/registration_record/children/editRegistrationInfo/EditRegistrationInfo")
 
 //3.6 患者管理
-const SinkPersonManage = () => import("@/views/home/children/sick_manage/SickManage")
+const SickManage = () => import("@/views/home/children/sick_manage/SickManage")
+//编辑患者
+const EditSick = () => import("@/views/home/children/sick_manage/EditSick")
+
+
+
 //3.7 统计报表
 const StatisticsTable = () => import("@/views/home/children/statistics_table/StatisticsTable")
 //3.8 系统设置
@@ -42,8 +47,30 @@ const SystemSetting = () => import("@/views/home/children/system_setting/SystemS
 const VipManage = () => import("@/views/home/children/vip_manage/VipManage")
 //3.10 工作空间
 const WorkSpace = () => import("@/views/home/children/workspace/WorkSpace")
+
+
+
 //3.11 药品管理
-const DrugManage = () => import("@/views/home/children/drug_manage/DrugManage")
+//>1 药品调价
+const DrugChangePrice = () => import("@/views/home/children/drug_manage/drug_change_price/DrugChangePrice")
+//>1.1 调价页面
+const NewAddChangePrice = () => import("@/views/home/children/drug_manage/drug_change_price/children/change_price_table/children/NewAddChangePrice")
+//>1.2 调价详情
+const ChangePriceDetail = () => import("@/views/home/children/drug_manage/drug_change_price/children/change_price_table/children/ChangePriceDetail")
+
+
+
+
+//>2 药品信息维护
+const DrugInfoManage = () => import("@/views/home/children/drug_manage/drug_info_manage/DrugInfoManage")
+//>3入库管理
+const EnterStockManage = () => import("@/views/home/children/drug_manage/enter_stock_manage/EnterStockManage")
+//>4出库管理
+const OutStockManage = () => import("@/views/home/children/drug_manage/out_stock_manage/OutStockManage")
+//>5库存盘点
+const StockCheck = () => import("@/views/home/children/drug_manage/stock_check/StockCheck")
+//>6库存管理
+const StockManage = () => import("@/views/home/children/drug_manage/stock_manage/StockManage")
 
 const routes = [
 
@@ -73,7 +100,7 @@ const routes = [
       },
       {
         //3.2 收费管理
-        path: 'costManage',
+        path: 'costManage/:homeTitleIndex',
         component: CostManage
       },
       {
@@ -108,9 +135,17 @@ const routes = [
       },
       {
         //3.6 患者管理
-        path: 'sinkPersonManage',
-        component: SinkPersonManage
+        path: 'sickManage/:homeTitleIndex',
+        component: SickManage,
       },
+
+      {
+        //编辑患者
+        path: 'editSick/:homeTitleIndex',
+        component: EditSick
+      },
+
+
       {
         //3.7 统计报表
         path: 'statisticsTable',
@@ -131,11 +166,49 @@ const routes = [
         path: 'workSpace/:homeTitleIndex',
         component: WorkSpace
       },
+      //3.11 药品管理
       {
-        //3.11 药品管理
-        path: 'drugManage/:homeTitleIndex',
-        component: DrugManage
+        // >1 药品信息维护
+        path: 'drugInfoManage/:homeTitleIndex',
+        component: DrugInfoManage
       },
+      {
+        // >2 入库管理
+        path: 'enterStockManage/:homeTitleIndex',
+        component: EnterStockManage
+      },
+      {
+        // >3 出库管理
+        path: 'outStockManage/:homeTitleIndex',
+        component: OutStockManage
+      },
+      {
+        //>4 库存管理
+        path: 'stockManage/:homeTitleIndex',
+        component: StockManage
+      },
+      {
+        // >5 库存盘点
+        path: 'stockCheck/:homeTitleIndex',
+        component: StockCheck
+      },
+
+
+      // >6 药品调价
+      {
+        path: 'drugChangePrice/:homeTitleIndex',
+        component: DrugChangePrice
+      },
+      {
+        // >6.1 新增调价
+        path: 'newAddChangePrice/:homeTitleIndex',
+        component: NewAddChangePrice
+      },
+      {
+        // >6.2 调价详情
+        path: 'changePriceDetail/:homeTitleIndex',
+        component: ChangePriceDetail
+      }
     ]
   },
 ]

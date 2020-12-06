@@ -19,7 +19,7 @@ export default {
   methods: {
     //6 患者管理
     toSinkPersonManage() {
-      this.$router.push("/home/sinkPersonManage")
+      this.$router.push("/home/sickManage/7")
     },
   }
 }

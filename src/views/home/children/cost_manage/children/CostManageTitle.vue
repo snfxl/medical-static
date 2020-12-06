@@ -1,5 +1,5 @@
 <template>
-  <sn-flex-appoint-element :element-count="4" class="margin-left-20">
+  <sn-flex-appoint-element :element-count="3" class="margin-left">
     <el-button type="primary" plain :slot="1">
       <sn-text text="待收费"/>
     </el-button>

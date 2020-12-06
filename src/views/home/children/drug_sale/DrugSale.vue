@@ -4,7 +4,7 @@
     <div slot="spaceContent">
       <!-- 结算按钮 -->
       <div class="text-right">
-        <el-button type="success" plain class="margin-bottom-20" @click="toCheckOutDrug">
+        <el-button type="primary" plain class="margin-bottom-20" @click="toCheckOutDrug">
           <sn-text text="结算"/>
         </el-button>
       </div>
@@ -609,6 +609,6 @@ export default {
   top: 10px;
 }
 .el-button{
-  width: 100px;
+  width: 100%;
 }
 </style>
