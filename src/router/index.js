@@ -38,18 +38,24 @@ const SickManage = () => import("@/views/home/children/sick_manage/SickManage")
 const EditSick = () => import("@/views/home/children/sick_manage/EditSick")
 
 
-
 //3.7 统计报表
 const StatisticsTable = () => import("@/views/home/children/statistics_table/StatisticsTable")
 //3.8 系统设置
 const SystemSetting = () => import("@/views/home/children/system_setting/SystemSetting")
+
 //3.9 会员管理
 const VipManage = () => import("@/views/home/children/vip_manage/VipManage")
+//>1 会员信息
+const VipSickInfo = () => import("@/views/home/children/vip_manage/vip_sick_info/VipSickInfo")
+//>2 已收费记录
+const HasCostRecord = () => import("@/views/home/children/vip_manage/vip_sick_info/children/cost_record/cost_record_detail/HasCostRecord")
+//>3 未收费记录
+const NotCostRecord = () => import("@/views/home/children/vip_manage/vip_sick_info/children/cost_record/cost_record_detail/NotCostRecord")
+//>4 已退费记录
+const ReturnCostRecord = () => import("@/views/home/children/vip_manage/vip_sick_info/children/cost_record/cost_record_detail/ReturnCostRecord")
+
 //3.10 工作空间
 const WorkSpace = () => import("@/views/home/children/workspace/WorkSpace")
-
-
-
 //3.11 药品管理
 //>1 药品调价
 const DrugChangePrice = () => import("@/views/home/children/drug_manage/drug_change_price/DrugChangePrice")
@@ -59,18 +65,51 @@ const NewAddChangePrice = () => import("@/views/home/children/drug_manage/drug_c
 const ChangePriceDetail = () => import("@/views/home/children/drug_manage/drug_change_price/children/change_price_table/children/ChangePriceDetail")
 
 
-
-
 //>2 药品信息维护
-const DrugInfoManage = () => import("@/views/home/children/drug_manage/drug_info_manage/DrugInfoManage")
+//>2.1 药品信息展示
+const DrugInfoShow = () => import("@/views/home/children/drug_manage/drug_info_manage/drug_info_show/DrugInfoShow")
+//>2.2 新增药品信息
+const NewAddDrug = () => import("@/views/home/children/drug_manage/drug_info_manage/new_add_drug/NewAddDrug")
+
 //>3入库管理
-const EnterStockManage = () => import("@/views/home/children/drug_manage/enter_stock_manage/EnterStockManage")
+//>3.1 入库信息管理
+const EnterStockInfo = () => import("@/views/home/children/drug_manage/enter_stock_manage/EnterStockInfo")
+//>3.2 通过审核的入库信息
+const EnterStockPassCheck = () => import("@/views/home/children/drug_manage/enter_stock_manage/EnterStockPassCheck")
+//>3.3 未通过审核的入库信息
+const EnterStockNotPassCheck = () => import("@/views/home/children/drug_manage/enter_stock_manage/EnterStockNotPassCheck")
+//>3.4 未审核的入库信息
+const EnterStockNotCheck = () => import("@/views/home/children/drug_manage/enter_stock_manage/EnterStockNotCheck")
+//>3.5 新增入库信息
+const NewAddEnterStockInfo = () => import("@/views/home/children/drug_manage/enter_stock_manage/NewAddEnterStockInfo")
+
+
 //>4出库管理
-const OutStockManage = () => import("@/views/home/children/drug_manage/out_stock_manage/OutStockManage")
+//>4.1 出库信息
+const OutStockInfo = () => import("@/views/home/children/drug_manage/out_stock_manage/OutStockInfo")
+//>4.2 通过审核的信息
+const OutStockPassCheck = () => import("@/views/home/children/drug_manage/out_stock_manage/OutStockPassCheck")
+//>4.3 未通过审核的信息
+const OutStockNotPassCheck = () => import("@/views/home/children/drug_manage/out_stock_manage/OutStockNotPassCheck")
+//>4.4 未审核的信息
+const OutStockNotCheck = () => import("@/views/home/children/drug_manage/out_stock_manage/OutStockNotCheck")
+//>4.5 新增出库信息
+const NewAddOutStockInfo = () => import("@/views/home/children/drug_manage/out_stock_manage/NewAddOutStockInfo")
+
+
 //>5库存盘点
-const StockCheck = () => import("@/views/home/children/drug_manage/stock_check/StockCheck")
+//>5.1 盘点记录
+const StockCheckRecord = () => import("@/views/home/children/drug_manage/stock_check/StockCheckRecord")
+//>5.2 盘点完成
+const StockCheckFinish = () => import("@/views/home/children/drug_manage/stock_check/StockCheckFinish")
+//>5.3 正在盘点
+const StockCheckCurrent = () => import("@/views/home/children/drug_manage/stock_check/StockCheckCurrent")
+
 //>6库存管理
 const StockManage = () => import("@/views/home/children/drug_manage/stock_manage/StockManage")
+//>6.1 库存管理详情
+const StockManageDetail = () => import("@/views/home/children/drug_manage/stock_manage/children/stock_detail/StockManageDetail")
+
 
 const routes = [
 
@@ -117,22 +156,24 @@ const routes = [
         path: 'newSeeDoctor/:homeTitleIndex',
         component: NewSeeDoctor
       },
+
       //3.5 挂号管理
       {
-        //新增挂号
+        //>1 新增挂号
         path: 'newAddRegistration/:homeTitleIndex',
         component: NewAddRegistration
       },
       {
-        //挂号记录
+        //>2 挂号记录
         path: 'registrationRecord/:homeTitleIndex',
         component: RegistrationRecord
       },
       {
-        //编辑挂号信息
+        //>3 编辑挂号信息
         path: 'editRegistrationInfo/:homeTitleIndex',
         component: EditRegistrationInfo
       },
+
       {
         //3.6 患者管理
         path: 'sickManage/:homeTitleIndex',
@@ -140,7 +181,7 @@ const routes = [
       },
 
       {
-        //编辑患者
+        //> 1编辑患者
         path: 'editSick/:homeTitleIndex',
         component: EditSick
       },
@@ -156,41 +197,135 @@ const routes = [
         path: 'systemSetting',
         component: SystemSetting
       },
+      //3.9 会员管理
       {
-        //3.9 会员管理
-        path: 'vipManage',
+        //>1 管理页面
+        path: 'vipManage/:homeTitleIndex',
         component: VipManage
       },
       {
-        //3.10 工作空间
+        //>2 会员信息
+        path: 'vipSickInfo/:homeTitleIndex',
+        component: VipSickInfo
+      },
+      {
+        //>3 已收费记录
+        path: 'hasCostRecord/:homeTitleIndex',
+        component: HasCostRecord
+      },
+      {
+        //>3 未收费记录
+        path: 'notCostRecord/:homeTitleIndex',
+        component: NotCostRecord
+      },
+      {
+        //>4 已退费记录
+        path: 'returnCostRecord/:homeTitleIndex',
+        component: ReturnCostRecord
+      },
+
+      //3.10 工作空间
+      {
         path: 'workSpace/:homeTitleIndex',
         component: WorkSpace
       },
+
+
       //3.11 药品管理
+      // >1 药品信息维护
       {
-        // >1 药品信息维护
-        path: 'drugInfoManage/:homeTitleIndex',
-        component: DrugInfoManage
+        // >1.1 药品信息展示
+        path: 'drugInfoShow/:homeTitleIndex',
+        component: DrugInfoShow
       },
       {
-        // >2 入库管理
-        path: 'enterStockManage/:homeTitleIndex',
-        component: EnterStockManage
+        // >1.2 新增药品信息
+        path: 'newAddDrug/:homeTitleIndex',
+        component: NewAddDrug
+      },
+
+      // >2 入库管理
+      {
+        //>2.1 入库信息
+        path: 'enterStockInfo/:homeTitleIndex',
+        component: EnterStockInfo
       },
       {
-        // >3 出库管理
-        path: 'outStockManage/:homeTitleIndex',
-        component: OutStockManage
+        //>2.2 审核通过入库信息
+        path: 'enterStockPassCheck/:homeTitleIndex',
+        component: EnterStockPassCheck
       },
       {
-        //>4 库存管理
+        //>2.3 审核未通过入库信息
+        path: 'enterStockNotPassCheck/:homeTitleIndex',
+        component: EnterStockNotPassCheck
+      },
+      {
+        //>2.3 未审核入库信息
+        path: 'enterStockNotCheck/:homeTitleIndex',
+        component: EnterStockNotCheck
+      },
+      {
+        //>2.4 新增入库信息
+        path: 'newAddEnterStockInfo/:homeTitleIndex',
+        component: NewAddEnterStockInfo
+      },
+
+      // >3 出库管理
+      {
+        //>3.1 出库信息
+        path: 'outStockInfo/:homeTitleIndex',
+        component: OutStockInfo
+      },
+      {
+        //>3.2 审核通过信息
+        path: 'outStockPassCheck/:homeTitleIndex',
+        component: OutStockPassCheck
+      },
+      {
+        //>3.3 审核未通过信息
+        path: 'outStockNotPassCheck/:homeTitleIndex',
+        component: OutStockNotPassCheck
+      },
+      {
+        //>3.3 未审核信息
+        path: 'outStockNotCheck/:homeTitleIndex',
+        component: OutStockNotCheck
+      },
+      {
+        //>3.4 新增出库信息
+        path: 'newAddOutStockInfo/:homeTitleIndex',
+        component: NewAddOutStockInfo
+      },
+
+
+      //>4 库存管理
+      {
         path: 'stockManage/:homeTitleIndex',
         component: StockManage
       },
       {
-        // >5 库存盘点
-        path: 'stockCheck/:homeTitleIndex',
-        component: StockCheck
+        //>4.1 库存管理详情
+        path: 'stockManageDetail/:homeTitleIndex',
+        component: StockManageDetail
+      },
+
+
+      // >5 库存盘点
+      {
+        // >5.1 盘点记录
+        path: 'stockCheckRecord/:homeTitleIndex',
+        component: StockCheckRecord
+      },
+      {
+        // >5.2 盘点完成
+        path: 'stockCheckFinish/:homeTitleIndex',
+        component: StockCheckFinish
+      },
+      {
+        // >5.3 正在盘点
+        path: 'stockCheckCurrent/:homeTitleIndex',
+        component: StockCheckCurrent
       },
 
 

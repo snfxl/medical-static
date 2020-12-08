@@ -1,19 +1,7 @@
 <template>
   <div class="margin-top">
-    <sn-row-has-four-col :one="6" :two="6" three="6" class="to-flex check-info">
-      <div slot="one-col" class="to-flex margin-left-20">
-        <sn-text text="盘点单号 :" class="margin-right"/>
-        <sn-text text="SA655231324156"/>
-      </div>
-      <div slot="two-col" class="to-flex">
-        <sn-text text="盘点人 :" class="margin-right"/>
-        <sn-text text="陈平安"/>
-      </div>
-      <div slot="three-col" class="to-flex">
-        <sn-text text="创建时间 :" class="margin-right"/>
-        <sn-text text="2019-12-11 10:23:22"/>
-      </div>
-    </sn-row-has-four-col>
+
+    <stock-check-worker-info/>
 
     <el-table
         :data="pageData" stripe style="width: 100%"
@@ -31,8 +19,15 @@
       <el-table-column prop="manufacturer" label="生产厂家"/>
       <el-table-column prop="nowStock" label="当前库存"/>
       <el-table-column prop="checkStock" label="盘点库存"/>
-      <el-table-column prop="stockAddOrReduce" label="库存增减"/>
-      <el-table-column prop="checkStatus" label="备注"/>
+
+      <el-table-column prop="stockAddOrReduce" label="库存增减">
+        <template slot-scope="scope">
+          <sn-text :text="scope.row.stockAddOrReduce" font-color="pink"/>
+        </template>
+      </el-table-column>
+
+
+      <el-table-column prop="remark" label="备注" width="150"/>
     </el-table>
     <sn-page
         :table-data="tableData"
@@ -42,8 +37,13 @@
 </template>
 
 <script>
+import StockCheckWorkerInfo from "@/views/home/children/drug_manage/stock_check/children/StockCheckWorkerInfo";
+
 export default {
   name: "FinishCheckTable",
+  components: {
+    StockCheckWorkerInfo
+  },
   data() {
     return {
       //每页数据

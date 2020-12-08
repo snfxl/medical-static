@@ -23,9 +23,13 @@ import SnDownHasTabs from "@/components/common/sn/tabs/SnDownHasTabs";
 import SnImageInCircle from "@/components/common/sn/avatar/SnImageInCircle";
 import SnFlexAppointElement from "@/components/common/sn/flex/SnFlexAppointElement";
 import SnDivHasBorder from "@/components/common/sn/div/SnDivHasBorder";
+import SnTimeLine from "@/components/common/sn/time_line/SnTimeLine";
+import SnRowHasManyDiv from "@/components/common/sn/div/SnRowHasManyDiv";
 
 export default {
   install(Vue) {
+    Vue.component('SnRowHasManyDiv', SnRowHasManyDiv)
+    Vue.component('SnTimeLine', SnTimeLine)
     Vue.component('SnDivHasBorder', SnDivHasBorder)
     Vue.component('SnFlexAppointElement', SnFlexAppointElement)
     Vue.component('SnImageInCircle', SnImageInCircle)

@@ -7,6 +7,9 @@
               :style="inputStyle"
               :placeholder="inputPlaceholder"
               :disabled="isDisabled">
+      <div slot="suffix">
+        <slot name="inputSuffix"/>
+      </div>
     </el-input>
     <div class="input-after">
       <slot name="input-after"/>

@@ -1,17 +1,17 @@
 <template>
-  <sn-flex-appoint-element
-      :element-count="4"
-      class="margin-bottom-20">
-    <el-button type="primary" plain :slot="1">
-      <sn-text text="个人信息"/>
-    </el-button>
-    <el-button type="primary" plain :slot="2">
-      <sn-text text="电子病历"/>
-    </el-button>
-    <el-button type="primary" plain :slot="3">
-      <sn-text text="收费记录"/>
-    </el-button>
-    <div class="to-right to-flex" :slot="4">
+  <sn-row-has-two-col :left="20" :right="4" class="margin-bottom-20">
+    <div slot="one-col">
+      <el-button type="primary" plain>
+        <sn-text text="个人信息"/>
+      </el-button>
+      <el-button type="primary" plain>
+        <sn-text text="电子病历"/>
+      </el-button>
+      <el-button type="primary" plain>
+        <sn-text text="收费记录"/>
+      </el-button>
+    </div>
+    <div slot="two-col" class="move-right">
       <el-button type="primary" plain>
         <sn-text text="保存"/>
       </el-button>
@@ -19,14 +19,14 @@
         <sn-text text="返回"/>
       </el-button>
     </div>
-  </sn-flex-appoint-element>
+  </sn-row-has-two-col>
 </template>
 
 <script>
 export default {
   name: "EditSickTitle",
   methods: {
-    toReturnSickManage(){
+    toReturnSickManage() {
       this.$router.push("/home/sickManage/7")
     }
   },
@@ -34,7 +34,8 @@ export default {
 </script>
 
 <style scoped>
-.to-right {
-  margin-left: 880px;
+.move-right{
+  position: relative;
+  left: 50px;
 }
 </style>

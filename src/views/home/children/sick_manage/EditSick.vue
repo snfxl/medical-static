@@ -1,11 +1,8 @@
 <template>
   <sn-three-col-space>
     <div slot="spaceContent">
-
       <edit-sick-title/>
-
       <edit-sick-info/>
-
       <edit-sick-about-family/>
     </div>
   </sn-three-col-space>

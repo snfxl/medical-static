@@ -1,9 +1,17 @@
 <template>
-  <div class="text-right">
-    <el-button type="primary" plain :slot="2" @click="newAddStockCheck">
+  <sn-row-has-two-col :left="22" :right="2">
+    <sn-text
+        text="盘点记录"
+        :move-down="10"
+        :font-size="20"
+        slot="one-col"
+        font-color="#666EE8"
+        font-weight="bold"/>
+
+    <el-button type="primary" plain @click="newAddStockCheck" slot="two-col">
       <sn-text text="新增盘点"/>
     </el-button>
-  </div>
+  </sn-row-has-two-col>
 </template>
 
 <script>
@@ -19,6 +27,6 @@ export default {
 
 <style scoped>
 .el-button {
-  width: 100%;
+  width: 100px;
 }
 </style>

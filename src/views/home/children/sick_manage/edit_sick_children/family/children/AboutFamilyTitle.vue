@@ -1,16 +1,22 @@
 <template>
-  <div class="to-flex">
-    <sn-text
-        :move-down="10"
-        text="关联家庭成员"
-        font-color="#21A3F1"
-        :font-size="18"
-        font-weight="bold"/>
-    <el-button type="danger" class="to-right" plain @click="dialogFormVisible = true">
-      <sn-text text="添加家庭成员"/>
-    </el-button>
-    <el-dialog title="家庭成员信息" width="40%"  :visible.sync="dialogFormVisible">
-
+  <div>
+    <sn-row-has-two-col :left="21" :right="3">
+      <sn-text
+          slot="one-col"
+          :move-down="10"
+          text="关联家庭成员"
+          font-color="#21A3F1"
+          :font-size="18"
+          font-weight="bold"/>
+      <el-button
+          type="danger"
+          slot="two-col"
+          plain
+          @click="dialogFormVisible = true">
+        <sn-text text="添加家庭成员"/>
+      </el-button>
+    </sn-row-has-two-col>
+    <el-dialog title="家庭成员信息" width="40%" :visible.sync="dialogFormVisible">
       <sn-row-has-two-col :left="12" :right="12">
         <sn-select :select-data="familyRelationSelect" slot="one-col">
           <sn-must-text text="家庭关系" slot="title"/>
@@ -98,17 +104,13 @@ export default {
     handleChange(value) {
 
     },
-
   },
 
 }
 </script>
 
 <style scoped lang="less">
-.to-right {
-  margin-left: 1050px;
-}
-.move-down{
+.move-down {
   position: relative;
   top: 4.5px;
 }

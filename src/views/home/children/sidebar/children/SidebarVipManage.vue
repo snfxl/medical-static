@@ -19,7 +19,7 @@ export default {
   methods: {
     //9 会员管理
     toVipManage() {
-      this.$router.push("/home/vipManage")
+      this.$router.push("/home/vipManage/14")
     },
   }
 }

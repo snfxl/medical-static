@@ -1,11 +1,13 @@
-<!-- 入库管理 -->
+<!-- 会员储值 -->
 <template>
-<div>入库管理</div>
+  <div>
+    会员储值
+  </div>
 </template>
 
 <script>
 export default {
-  name: "EnterStockManage"
+  name: "VipStore"
 }
 </script>
 

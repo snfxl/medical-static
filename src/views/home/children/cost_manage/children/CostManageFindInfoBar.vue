@@ -7,11 +7,11 @@
     <sn-select :select-data="orderType"
                slot="one-col"
                class="to-flex move-down-little margin-left"
-               :select-style="{'width':'180px'}">
+               :select-style="{'width':'160px'}">
       <sn-text text="订单类型" slot="title" class="margin-right-20 move-down"/>
     </sn-select>
 
-    <sn-date-picker-with-round slot="two-col" class="to-flex" :date-picker-style="{'width':'270px'}">
+    <sn-date-picker-with-round slot="two-col" class="to-flex" :date-picker-style="{'width':'220px'}">
       <sn-text text="创建时间" slot="title" class="margin-right-20 move-down-date"/>
     </sn-date-picker-with-round>
 

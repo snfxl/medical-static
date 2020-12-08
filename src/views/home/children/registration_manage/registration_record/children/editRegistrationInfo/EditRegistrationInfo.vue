@@ -1,11 +1,15 @@
 <template>
   <sn-three-col-space>
     <div slot="spaceContent">
-      <sn-title
-          title="编辑挂号信息"
-          class="margin-bottom-20 to-flex"
-          :title-style="{'font-size':'20px'}">
-        <div slot="other" class="move">
+      <sn-row-has-two-col :left="19" :right="5" class="margin-bottom-20">
+        <sn-text
+            font-weight="bold"
+            :font-size="20"
+            :move-down="7"
+            slot="one-col"
+            text="编辑挂号信息">
+        </sn-text>
+        <div slot="two-col">
           <el-button type="danger" plain>
             <sn-text text="退号"/>
           </el-button>
@@ -13,7 +17,8 @@
             <sn-text text="返回"/>
           </el-button>
         </div>
-      </sn-title>
+      </sn-row-has-two-col>
+
       <order-info/>
       <sn-card-no-title>
         <div slot="content">
@@ -61,9 +66,7 @@ export default {
 </script>
 
 <style scoped>
-.move {
-  position: relative;
-  bottom: 8px;
-  left: 850px;
+.el-button {
+  width: 100px;
 }
 </style>

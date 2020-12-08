@@ -89,3 +89,14 @@ a {
 .float-left {
     float: left;
 }
+
+.vip {
+    font-weight: bold;
+    color: #FFC71C;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.sn-yellow {
+    color: #FFC71C;
+}

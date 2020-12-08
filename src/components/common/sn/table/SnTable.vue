@@ -3,7 +3,7 @@
       :data="tableData"
       :border="isHasBorder"
       style="width: 100%"
-      :header-cell-style="{'text-align':'center'}"
+      :header-cell-style="{'text-align':'center','background-color':'#E0E2FA'}"
       :cell-style="{'text-align':' center'}"
       :height="height">
     <el-table-column
@@ -27,7 +27,6 @@ export default {
 
     height: {
       type: String,
-      default: ''
     },
 
     //表格标题

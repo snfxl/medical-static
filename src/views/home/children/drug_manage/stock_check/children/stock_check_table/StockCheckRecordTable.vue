@@ -67,11 +67,14 @@ export default {
     deleteCheck() {
 
     },
+    //查看盘点完成的信息
     lookCheckDetailOnFinish() {
-      this.$emit("lookCheckDetailOnFinish")
+
+      this.$router.push("/home/stockCheckFinish/12")
     },
+    //查看正在盘点的信息
     lookCheckDetailOnCurrent(){
-      this.$emit("lookCheckDetailOnCurrent")
+      this.$router.push("/home/stockCheckCurrent/12")
     }
   },
 

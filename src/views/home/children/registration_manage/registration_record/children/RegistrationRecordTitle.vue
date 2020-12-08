@@ -1,18 +1,20 @@
 <template>
-  <sn-flex-appoint-element :element-count="4" class="margin-left-20">
-    <el-button type="primary" plain :slot="1">
-      <sn-text text="未就诊"/>
-    </el-button>
-    <el-button type="primary" plain :slot="2">
-      <sn-text text="已就诊"/>
-    </el-button>
-    <el-button type="primary" plain :slot="3">
-      <sn-text text="已退号"/>
-    </el-button>
-    <el-button type="primary" plain :slot="4" class="to-right" @click="toNewAddRegistration">
+  <sn-row-has-two-col :left="22" :right="2">
+    <div slot="one-col">
+      <el-button type="primary" plain>
+        <sn-text text="未就诊"/>
+      </el-button>
+      <el-button type="primary" plain>
+        <sn-text text="已就诊"/>
+      </el-button>
+      <el-button type="primary" plain>
+        <sn-text text="已退号"/>
+      </el-button>
+    </div>
+    <el-button type="primary" plain slot="two-col" @click="toNewAddRegistration">
       <sn-text text="新增挂号"/>
     </el-button>
-  </sn-flex-appoint-element>
+  </sn-row-has-two-col>
 </template>
 
 <script>
@@ -27,7 +29,4 @@ export default {
 </script>
 
 <style scoped>
-.to-right {
-  margin-left: 900px;
-}
 </style>

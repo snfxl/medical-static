@@ -7,7 +7,7 @@
         v-model="value"
         type="date"
         placeholder="选择日期"
-        style="width: 100%">
+        :style="setStyle">
     </el-date-picker>
   </div>
 </template>
@@ -18,7 +18,17 @@ export default {
     return {
       value: ''
     }
-  }
+  },
+  props: {
+    setStyle: {
+      type: Object,
+      default() {
+        return {
+          'width': '100%'
+        }
+      }
+    },
+  },
 }
 </script>
 

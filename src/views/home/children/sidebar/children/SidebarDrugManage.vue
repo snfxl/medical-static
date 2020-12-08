@@ -31,7 +31,7 @@ export default {
     },
     //库存盘点
     toStockCheck() {
-      this.$router.push("/home/stockCheck/12")
+      this.$router.push("/home/stockCheckRecord/12")
     },
     //库存管理
     toStockManage() {
@@ -39,15 +39,15 @@ export default {
     },
     //出库管理
     toOutStockManage() {
-      this.$router.push("/home/outStockManage/10")
+      this.$router.push("/home/outStockInfo/10")
     },
     //入库管理
     toEnterStockManage() {
-      this.$router.push("/home/enterStockManage/9")
+      this.$router.push("/home/enterStockInfo/9")
     },
     //药品信息维护
     toDrugInfoManage() {
-      this.$router.push("/home/drugInfoManage/8")
+      this.$router.push("/home/drugInfoShow/8")
     },
   },
 }

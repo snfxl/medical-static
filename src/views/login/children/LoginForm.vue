@@ -73,7 +73,7 @@ export default {
   display: flex;
   align-items: center;
   border-radius: 5px;
-  box-shadow: #666 0px 0px 10px; //四周设置阴影
+  box-shadow: #666 0 0 10px; //四周设置阴影
   height: 656/1.25px;
   width: 100%;
 }

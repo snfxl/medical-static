@@ -1,22 +1,34 @@
 <template>
-
-  <sn-row-has-two-col>
-
-    <sn-text text="查看盘点详情" :font-size="20" font-color="#666EE8" font-weight="bold"/>
-
-  </sn-row-has-two-col>
-
-    <el-button type="primary" plain :slot="2" @click="returnStockCheckRecord">
+  <sn-row-has-two-col :left="22" :right="2">
+    <sn-text
+        text="查看盘点详情"
+        :move-down="10"
+        :font-size="20"
+        slot="one-col"
+        font-color="#666EE8"
+        font-weight="bold"/>
+    <el-button type="primary"
+               slot="two-col"
+               plain
+               @click="returnStockCheckRecord">
       <sn-text text="返回"/>
     </el-button>
+  </sn-row-has-two-col>
 </template>
 
 <script>
 export default {
-  name: "StockCheckFinishTitle"
+  name: "StockCheckFinishTitle",
+  methods: {
+    returnStockCheckRecord() {
+      this.$router.push("/home/stockCheckRecord/12")
+    }
+  },
 }
 </script>
 
 <style scoped>
-
+.el-button {
+  width: 100px;
+}
 </style>

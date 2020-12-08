@@ -76,7 +76,7 @@ export default {
       this.$router.push("/home/newSeeDoctor/2")
     },
     toEditRegistrationInfo(){
-      this.$router.push("/home/editRegistrationInfo/2")
+      this.$router.push("/home/editRegistrationInfo/3")
     }
   },
 }

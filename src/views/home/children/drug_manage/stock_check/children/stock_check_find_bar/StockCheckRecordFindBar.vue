@@ -1,7 +1,7 @@
 <template>
   <sn-row-has-four-col
       class="to-flex"
-      :one="8"
+      :one="9"
       :two="7">
     <sn-date-picker-with-round slot="one-col" class="to-flex" :date-picker-style="{'width':'270px'}">
       <sn-text text="创建时间" slot="title" :move-down="12" class="margin-right-20 move-down-date"/>
@@ -30,6 +30,6 @@ export default {
 <style scoped>
 .move-down-little {
   position: relative;
-  top: 2px;
+  top: 3px;
 }
 </style>
