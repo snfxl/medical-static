@@ -53,6 +53,8 @@ const HasCostRecord = () => import("@/views/home/children/vip_manage/vip_sick_in
 const NotCostRecord = () => import("@/views/home/children/vip_manage/vip_sick_info/children/cost_record/cost_record_detail/NotCostRecord")
 //>4 已退费记录
 const ReturnCostRecord = () => import("@/views/home/children/vip_manage/vip_sick_info/children/cost_record/cost_record_detail/ReturnCostRecord")
+//>5 编辑电子药方信息
+const EditElectronicCase = () => import("@/views/home/children/vip_manage/vip_sick_info/children/electronic_medical_record/children/EditElectronicCase")
 
 //3.10 工作空间
 const WorkSpace = () => import("@/views/home/children/workspace/WorkSpace")
@@ -222,6 +224,11 @@ const routes = [
         //>4 已退费记录
         path: 'returnCostRecord/:homeTitleIndex',
         component: ReturnCostRecord
+      },
+      {
+        //>4 编辑药方信息
+        path: 'editElectronicCase/:homeTitleIndex',
+        component: EditElectronicCase
       },
 
       //3.10 工作空间

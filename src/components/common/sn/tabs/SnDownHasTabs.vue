@@ -22,9 +22,9 @@
           :key="item.name"
           :label="item.title"
           :name="item.name">
-        <west-prescription v-if="item.content === '西/成药处方'"/>
-        <center-prescription v-if="item.content === '中药处方'"/>
-        <check-item-prescription v-if="item.content === '检查项目'"/>
+        <west-prescription :add-or-save="addOrSave" v-if="item.content === '西/成药处方'"/>
+        <center-prescription  :add-or-save="addOrSave" v-if="item.content === '中药处方'"/>
+        <check-item-prescription :add-or-save="addOrSave" v-if="item.content === '检查项目'"/>
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -46,26 +46,41 @@ export default {
   props: {
     downData: {
       type: Array,
-      default: []
+      default() {
+        return []
+      }
+    },
+    addOrSave: {
+      type: String,
+      default: '添加处方'
     }
   },
   data() {
     return {
-      editableTabsValue: '0',
-      editableTabs: [],
-      tabIndex: 0
+      editableTabsValue: '1',
+      editableTabs: [
+        {
+          title: '西/成药处方 1',
+          name: '1',  //name 与 editableTabsValue相同时在添加后悔自动显示
+          content: '西/成药处方'
+        }
+      ],
+      tabIndex: 1
     }
-  },
+  }
+  ,
   methods: {
     addTab(targetName) {
-      let newTabName = ++this.tabIndex + '';
+      let newTabName = ++this.tabIndex + '' //新标签的name
+      let title = targetName + ' ' + this.tabIndex //新标签显示的标题
       this.editableTabs.push({
-        title: targetName,
+        title: title,
         name: newTabName,
-        content: targetName
+        content: targetName //内容描述
       });
       this.editableTabsValue = newTabName;
-    },
+    }
+    ,
     removeTab(targetName) {
       let tabs = this.editableTabs;
       let activeName = this.editableTabsValue;

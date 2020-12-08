@@ -1,5 +1,6 @@
 <template>
   <prescription-template
+      :add-or-save="addOrSave"
       :right-table-data="westDrugInfoTableData"
       :right-table-title="westDrugInfoTableTitle"
       :select-data="westDrugInfoSelectData"
@@ -15,6 +16,12 @@ export default {
   name: "WestPrescription",
   components: {
     PrescriptionTemplate
+  },
+  props: {
+    addOrSave: {
+      type: String,
+      default: '添加处方'
+    },
   },
   data(){
     return{

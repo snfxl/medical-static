@@ -7,7 +7,7 @@
           :font-size="25"
           font-weight="bold"
           class="margin-bottom-20 "
-          text="收费明细"/>
+          :text="costRecordTotle"/>
     </div>
 
     <div class="margin-bottom-20">
@@ -71,6 +71,12 @@
 <script>
 export default {
   name: "CostRecordProjectDetail",
+  props: {
+    costRecordTotle: {
+      type: String,
+      default: ''
+    },
+  },
   data() {
     return {
       showWestDrugPrescription: true,

@@ -1,13 +1,13 @@
 <template>
   <sn-row-has-two-col
-      :left="20"
-      :right="4"
+      :left="22"
+      :right="2"
       class="to-flex move-down">
     <div class="to-flex" slot="one-col">
       <sn-text
           :font-size="20"
           font-weight="bold"
-          text="应收金额 :"
+          text="订单详情-已退费-退费金额:"
           class="margin-right"
           :move-down="5"/>
       <sn-text :number="150.25"
@@ -27,29 +27,19 @@
           <sn-text text="返回"/>
         </el-button>
       </router-link>
-      <collect-money-dialog class="margin-left-20"/>
     </div>
   </sn-row-has-two-col>
 </template>
 
 <script>
-import CollectMoneyDialog
-  from "@/views/home/children/registration_manage/new_add_registration/children/CollectMoneyDialog";
-
 export default {
-  name: "CostRecordDetailTitle",
-  components: {
-    CollectMoneyDialog
-  }
+  name: "ReturnCostRecordTitle",
+
 }
 </script>
 
 <style scoped>
-.el-button {
+.el-button{
   width: 100px;
-}
-.move-down{
-  position: relative;
-  top: 10px;
 }
 </style>

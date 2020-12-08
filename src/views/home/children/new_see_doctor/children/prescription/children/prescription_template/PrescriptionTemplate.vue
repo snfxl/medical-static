@@ -28,7 +28,7 @@
       <sn-card-with-title slot="two-col">
         <sn-row-has-two-col slot="title" :left="12" :right="12">
           <div slot="one-col" class="title-left">
-            <sn-text :text="selectDescription" class="description"/>
+            <sn-text :text="selectDescription" :move-down="20" class="margin-right"/>
             <sn-select :select-data="selectData" :select-style="{'width':'120px'}"/>
           </div>
           <sn-search-input class="sn-search-input" slot="two-col" :input-placeholder="inputPlaceholder"/>
@@ -41,14 +41,15 @@
             :table-title="rightTableTitle"/>
       </sn-card-with-title>
     </sn-row-has-two-col>
+
+    <!-- 结算总价 -->
     <sn-card-no-title>
       <div slot="content">
-        <!-- 结算总价 -->
         <money-detail/>
         <el-button type="success"
                    plain slot="other"
                    class="margin-top margin-bottom float-right">
-          <sn-text text="添加处方"/>
+          <sn-text :text="addOrSave"/>
         </el-button>
       </div>
     </sn-card-no-title>
@@ -77,6 +78,12 @@ export default {
     CheckItemAddTable
   },
   props: {
+
+    //添加或保存处方
+    addOrSave:{
+      type:String,
+      default:'添加处方'
+    },
 
     //批量选择中  选中名字
     hasChooseButtonName: {
@@ -151,9 +158,4 @@ export default {
   display: flex;
 }
 
-.description {
-  position: relative;
-  margin-right: 10px;
-  top: 12px;
-}
 </style>

@@ -3,10 +3,10 @@
   <sn-three-col-space>
     <div slot="spaceContent">
       <sn-card-with-title>
-        <cost-record-detail-title slot="title"/>
+        <has-cost-record-title slot="title"/>
         <div slot="content">
           <!-- 收费项目明细 -->
-          <cost-record-project-detail/>
+          <cost-record-project-detail cost-record-totle="收费明细"/>
           <el-divider/>
           <!-- 订单明细 -->
           <cost-record-order-info/>
@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import CostRecordDetailTitle
-  from "@/views/home/children/vip_manage/vip_sick_info/children/cost_record/cost_record_detail/children/CostRecordDetailTitle";
+import HasCostRecordTitle
+  from "@/views/home/children/vip_manage/vip_sick_info/children/cost_record/cost_record_detail/children/title/HasCostRecordTitle";
 import CostRecordProjectDetail
   from "@/views/home/children/vip_manage/vip_sick_info/children/cost_record/cost_record_detail/children/CostRecordProjectDetail";
 import CostRecordOrderInfo
@@ -37,7 +37,7 @@ import CostRecordMeetDoctorInfo
 export default {
   name: "HasCostRecord",
   components: {
-    CostRecordDetailTitle,
+    HasCostRecordTitle,
     CostRecordProjectDetail,
     CostRecordOrderInfo,
     CostRecordSickInfo,

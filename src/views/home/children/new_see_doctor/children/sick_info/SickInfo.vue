@@ -1,10 +1,15 @@
 <!-- 病人信息 -->
 <template>
   <sn-card-with-title class="sick-info">
-    <div slot="title">
-      <el-button type="primary" plain size="medium" @click="toShowPrescription">处方</el-button>
-      <el-button type="danger" plain size="medium" @click="toShowSickCase">病例</el-button>
-    </div>
+    <sn-row-has-two-col :left="22" :right="2" slot="title">
+      <div slot="one-col">
+        <el-button type="primary" plain size="medium" @click="toShowPrescription">处方</el-button>
+        <el-button type="danger" plain size="medium" @click="toShowSickCase">病例</el-button>
+      </div>
+      <div slot="two-col">
+        <slot name="button"/>
+      </div>
+    </sn-row-has-two-col>
     <div slot="content">
       <sick-info-first-row ref="first"></sick-info-first-row>
       <sick-info-second-row ref="second"></sick-info-second-row>

@@ -3,6 +3,8 @@
     <div slot="spaceContent">
       <sn-card-with-title>
         <vip-sick-info-title
+            :is-electronic-case="showElectronicMedicalRecord"
+            :is-person-info="showPersonInfo"
             @toPersonInfo="toPersonInfo"
             @toElectronicMedicalRecord="toElectronicMedicalRecord"
             @toCostRecord="toCostRecord"
@@ -18,7 +20,8 @@
 
 <script>
 import PersonInfo from "@/views/home/children/vip_manage/vip_sick_info/children/person_info/PersonInfo";
-import CostRecordShow from "@/views/home/children/vip_manage/vip_sick_info/children/cost_record/cost_record_show/CostRecordShow";
+import CostRecordShow
+  from "@/views/home/children/vip_manage/vip_sick_info/children/cost_record/cost_record_show/CostRecordShow";
 import electronicMedicalRecord
   from "@/views/home/children/vip_manage/vip_sick_info/children/electronic_medical_record/electronicMedicalRecord";
 import VipSickInfoTitle from "@/views/home/children/vip_manage/vip_sick_info/children/VipSickInfoTitle";

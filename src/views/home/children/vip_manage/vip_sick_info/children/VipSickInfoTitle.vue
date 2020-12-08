@@ -1,5 +1,5 @@
 <template>
-  <sn-row-has-two-col :left="20" :right="4" class="margin-bottom-20">
+  <sn-row-has-two-col :left="19" :right="5" class="margin-bottom-20">
     <div slot="one-col">
       <el-button type="primary" plain @click="toPersonInfo" :style="personInfoButtonStyle">
         <sn-text text="个人信息"/>
@@ -11,11 +11,22 @@
         <sn-text text="收费记录"/>
       </el-button>
     </div>
-    <div slot="two-col" class="move-right">
-      <el-button type="primary" plain @click="saveAndReturn">
+    <div slot="two-col" class="text-right">
+      <el-button
+          v-if="isPersonInfo"
+          type="primary"
+          plain @click="saveAndReturn">
         <sn-text text="保存"/>
       </el-button>
-      <el-button type="primary" plain @click="toReturnVipManage">
+      <el-button
+          v-if="isElectronicCase"
+          type="primary"
+          plain @click="newAddCase">
+        <sn-text text="新增病例"/>
+      </el-button>
+      <el-button
+          type="primary"
+          plain @click="toReturnVipManage">
         <sn-text text="返回"/>
       </el-button>
     </div>
@@ -25,6 +36,16 @@
 <script>
 export default {
   name: "VipSickInfoTitle",
+  props: {
+    isPersonInfo: {
+      type: Boolean,
+      default: false
+    },
+    isElectronicCase: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       personInfoButtonStyle: {
@@ -65,14 +86,17 @@ export default {
     },
     saveAndReturn() {
       this.$router.push("/home/vipManage/14")
+    },
+    newAddCase(){
+      this.$router.push("/home/newSeeDoctor/14")
     }
   }
 }
 </script>
 
 <style scoped>
-.move-right {
-  position: relative;
-  left: 50px;
+
+.el-button{
+  width: 100px;
 }
 </style>
