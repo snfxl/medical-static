@@ -1,11 +1,13 @@
-<!-- 出库管理-->
+<!-- 会员设置 -->
 <template>
-<div>出库管理</div>
+<div>
+  会员设置
+</div>
 </template>
 
 <script>
 export default {
-  name: "OutStockManage"
+name: "VipSetting"
 }
 </script>
 
