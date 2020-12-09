@@ -25,9 +25,15 @@ import SnFlexAppointElement from "@/components/common/sn/flex/SnFlexAppointEleme
 import SnDivHasBorder from "@/components/common/sn/div/SnDivHasBorder";
 import SnTimeLine from "@/components/common/sn/time_line/SnTimeLine";
 import SnRowHasManyDiv from "@/components/common/sn/div/SnRowHasManyDiv";
+import SnShowByButtonNoCard from "@/components/common/sn/button/SnShowByButtonNoCard";
+import SnShowByButtonWithCard from "@/components/common/sn/button/SnShowByButtonWithCard";
+import SnDialogLeft from "@/components/common/sn/dialog/SnDialogLeft";
 
 export default {
   install(Vue) {
+    Vue.component('SnDialogLeft', SnDialogLeft)
+    Vue.component('SnShowByButtonNoCard', SnShowByButtonNoCard)
+    Vue.component('SnShowByButtonWithCard', SnShowByButtonWithCard)
     Vue.component('SnRowHasManyDiv', SnRowHasManyDiv)
     Vue.component('SnTimeLine', SnTimeLine)
     Vue.component('SnDivHasBorder', SnDivHasBorder)

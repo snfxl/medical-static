@@ -6,7 +6,7 @@
     <el-date-picker
         v-model="value"
         type="date"
-        placeholder="选择日期"
+        placeholder="选择时间"
         :style="setStyle">
     </el-date-picker>
   </div>

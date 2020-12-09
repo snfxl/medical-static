@@ -7,17 +7,14 @@
                 'background-color':'#ECF5FF'
               }"
         :cell-style="{'text-align':'center'}">
-      <el-table-column prop="id" label="序号"></el-table-column>
+      <el-table-column prop="id" label="序号" width="50"></el-table-column>
       <el-table-column prop="cardId" label="卡号"/>
       <el-table-column prop="vipType" label="会员类型"/>
       <el-table-column prop="vipGrade" label="会员等级">
         <template slot-scope="scope">
           <sn-text
-              class="vip-grade"
-              :text="scope.row.vipGrade"
-              font-color="orange"
-              :font-size="20"
-              font-weight="bold"/>
+              class="vip"
+              :text="scope.row.vipGrade"/>
         </template>
       </el-table-column>
       <el-table-column prop="vipName" label="会员姓名">
@@ -27,7 +24,7 @@
           </el-link>
         </template>
       </el-table-column>
-      <el-table-column prop="phoneNumber" label="手机号码"/>
+      <el-table-column prop="phoneNumber" label="手机号码" width="115"/>
       <el-table-column prop="cumulativeConsume" label="累计消费(元)"/>
       <el-table-column prop="storeResidue" label="储值余额(元)"/>
       <el-table-column prop="cumulativeStore" label="累计储值(元)"/>
@@ -42,40 +39,27 @@
       </el-table-column>
 
 
-      <el-table-column label="操作" width="150">
+      <el-table-column label="操作" width="120">
         <template slot-scope="scope">
-          <el-dropdown trigger="click" placement="bottom">
-            <el-link type="danger" :underline="false">
-              <sn-text text="操作"/>
-            </el-link>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item class="text-center">
-                <el-link :underline="false" type="primary">
-                  <sn-text text="充值"/>
-                </el-link>
-              </el-dropdown-item>
-              <el-dropdown-item class="text-center">
-                <el-link :underline="false" type="primary">
-                  <sn-text text="设置等级"/>
-                </el-link>
-              </el-dropdown-item>
-              <el-dropdown-item class="text-center">
-                <el-link :underline="false" type="primary">
-                  <sn-text text="积分变动"/>
-                </el-link>
-              </el-dropdown-item>
-              <el-dropdown-item class="text-center">
-                <el-link :underline="false" type="primary">
-                  <sn-text text="退款"/>
-                </el-link>
-              </el-dropdown-item>
-              <el-dropdown-item class="text-center">
-                <el-link :underline="false" type="primary">
-                  <sn-text text="等级变更记录"/>
-                </el-link>
-              </el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
+
+          <sn-dialog-left :content-item-count="5">
+
+            <sn-text text="操作" slot="title"/>
+
+            <!-- 充值弹出框-->
+            <balance-recharge-dialog slot="itemName0"/>
+            <!-- 变动积分弹出框-->
+            <change-integral-dialog slot="itemName1"/>
+            <!-- 退款弹出框-->
+            <refund-dialog slot="itemName2"/>
+            <!--  会员等级变更记录 -->
+            <vip-change-grade-record-dialog slot="itemName3"/>
+            <!-- 会员设置 -->
+            <vip-set-grade-dialog slot="itemName4"/>
+
+          </sn-dialog-left>
+
+
         </template>
       </el-table-column>
     </el-table>
@@ -89,9 +73,25 @@
 </template>
 
 <script>
+import RefundDialog
+  from "@/views/home/children/vip_manage/children/vip_store/children/vip_store_table/children/RefundDialog";
+import BalanceRechargeDialog
+  from "@/views/home/children/vip_manage/children/vip_store/children/vip_store_table/children/BalanceRechargeDialog";
+import ChangeIntegralDialog
+  from "@/views/home/children/vip_manage/children/vip_integral/children/vip_integral_table/children/ChangeIntegralDialog";
+import VipChangeGradeRecordDialog
+  from "@/views/home/children/vip_manage/children/vip_list/children/dialog/VipChangeGradeRecordDialog";
+import VipSetGradeDialog from "@/views/home/children/vip_manage/children/vip_list/children/dialog/VipSetGradeDialog";
+
 export default {
   name: "StockManageTable",
-  components: {},
+  components: {
+    RefundDialog,
+    BalanceRechargeDialog,
+    ChangeIntegralDialog,
+    VipChangeGradeRecordDialog,
+    VipSetGradeDialog
+  },
   data() {
     return {
       //每页数据
@@ -111,7 +111,7 @@ export default {
     getPageData(pageData) {
       this.pageData = pageData
     },
-    toVipSickInfo(){
+    toVipSickInfo() {
       this.$router.push('/home/vipSickInfo/14')
     }
   },
@@ -119,7 +119,4 @@ export default {
 </script>
 
 <style scoped>
-.vip-grade {
-  font-style: italic;
-}
 </style>

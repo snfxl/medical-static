@@ -16,40 +16,19 @@
           class="margin-right"/>
     </sn-select>
 
-    <sn-date-picker slot="two-col" :set-style="{'width':'220px'}" class="to-flex">
-      <sn-text text="创建时间" slot="title" class="margin-right" :move-down="10"/>
-    </sn-date-picker>
-
     <!-- 搜索框-->
     <sn-search-input
         :input-style="{'width':'250px'}"
-        :input-placeholder="inputPlaceholder"
-        slot="three-col" class="move-up"/>
-
-    <el-checkbox
-        class="warning"
-        v-model="vipExpireWarnChecked"
-        slot="four-col">
-      <sn-text text="会员到期预警"/>
-    </el-checkbox>
-
+        input-placeholder="患者姓名/手机号码/会员卡号"
+        slot="two-col" class="move-up"/>
   </sn-row-has-four-col>
 </template>
 
 <script>
 export default {
-  name: "StockManageFindBar",
-  props: {
-    inputPlaceholder: {
-      type: String,
-      default: ''
-    },
-  },
+  name: "VipStoreFindBar",
   data() {
     return {
-
-      vipExpireWarnChecked: true,
-
       vipGradeData: [
         {
           value: 0,
@@ -80,29 +59,11 @@ export default {
           label: 'vip6'
         },
       ],
-      drugStatusData: [
-        {
-          value: 0,
-          label: '全部'
-        },
-        {
-          value: 1,
-          label: '启用'
-        },
-        {
-          value: 2,
-          label: '停用'
-        },
-      ],
-      checkList: ['有效期预警']
     }
   },
 }
 </script>
 
 <style scoped>
-.warning {
-  position: relative;
-  top: 11px;
-}
+
 </style>

@@ -119,3 +119,9 @@
     color: #666EE8;
     font-weight: 700;
 }
+
+/* 模态框 */
+.el-dialog__body {
+    padding-top: 0;
+    padding-bottom: 0;
+}

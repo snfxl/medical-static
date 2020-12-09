@@ -3,25 +3,25 @@
     <el-button
         :style="vipListButtonStyle"
         @click="toVipList"
-        plain type="danger">
+        plain type="primary">
       <sn-text text="会员列表"/>
     </el-button>
     <el-button
         :style="vipStoreButtonStyle"
         @click="toVipStore"
-        plain type="danger">
+        plain type="primary">
       <sn-text text="储值管理"/>
     </el-button>
     <el-button
         :style="vipIntegralButtonStyle"
         @click="toVipIntegral"
-        plain type="danger">
+        plain type="primary">
       <sn-text text="积分管理"/>
     </el-button>
     <el-button
         :style="vipSettingButtonStyle"
         @click="toVipSetting"
-        plain type="danger">
+        plain type="primary">
       <sn-text text="会员设置"/>
     </el-button>
   </div>
@@ -33,14 +33,14 @@ export default {
   data() {
     return {
       vipListButtonStyle: {
-        'background-color': '#F56C6C',
+        'background-color': '#409EFF',
         'color': '#fff'
       },
       vipIntegralButtonStyle: '',
       vipSettingButtonStyle: '',
       vipStoreButtonStyle: '',
       buttonStyle: {
-        'background-color': '#F56C6C',
+        'background-color': '#409EFF',
         'color': '#fff'
       }
     }

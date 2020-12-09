@@ -7,6 +7,7 @@
       :cell-style="{'text-align':' center'}"
       :height="height">
     <el-table-column
+        :width="item.cellWidth"
         :prop="item.prop"
         :label="item.label"
         v-for="item in tableTitle"/>

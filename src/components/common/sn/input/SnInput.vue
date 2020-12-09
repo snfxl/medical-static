@@ -36,11 +36,22 @@ export default {
       type: String,
       default: ''
     },
+
+    width: {
+      type: String,
+      default: '100%'
+    },
+    height: {
+      type: String,
+      default: '40px'
+    },
+
     inputStyle: {
       type: Object,
       default() {
         return {
-          'width': '100%'
+          'width': this.width,
+          'height': this.height
         }
       }
     },
@@ -63,5 +74,9 @@ export default {
 
 .input-after {
   margin-right: 5px;
+}
+
+/deep/ .el-input__inner {
+  height: 100%;
 }
 </style>
