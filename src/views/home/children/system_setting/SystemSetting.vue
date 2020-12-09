@@ -1,13 +1,15 @@
 <!-- 系统设置-->
 <template>
-<div>
-  系统设置
-</div>
+  <sn-three-col-space>
+    <div slot="spaceContent">
+      <router-view/>
+    </div>
+  </sn-three-col-space>
 </template>
 
 <script>
 export default {
-name: "SystemSetting"
+  name: "SystemSetting"
 }
 </script>
 

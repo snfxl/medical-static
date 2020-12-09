@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import RegisterForm from "@/views/register/children/RegisterForm";
-import LoginOrRegister from "@/views/login/children/LoginOrRegister";
+import RegisterForm from "@/views/login_register/register/children/RegisterForm";
+import LoginOrRegister from "@/views/login_register/LoginOrRegister";
 
 export default {
   name: "register",

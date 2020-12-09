@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import LoginForm from "@/views/login/children/LoginForm";
-import LoginOrRegister from "@/views/login/children/LoginOrRegister";
+import LoginForm from "@/views/login_register/login/children/LoginForm";
+import LoginOrRegister from "@/views/login_register/LoginOrRegister";
 export default {
   name: "longin",
   components: {

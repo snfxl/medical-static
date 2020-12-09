@@ -1,13 +1,15 @@
 <!-- 统计报表-->
 <template>
-<div>
-  统计报表
-</div>
+  <sn-three-col-space>
+    <div slot="spaceContent">
+      <router-view/>
+    </div>
+  </sn-three-col-space>
 </template>
 
 <script>
 export default {
-name: "StatisticsTable"
+  name: "StatisticsTable"
 }
 </script>
 

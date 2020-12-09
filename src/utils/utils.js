@@ -1,4 +1,4 @@
-//根据下拉框的vlue 获取下拉框的label
+//根据下拉框的value 获取下拉框的label
 export function getSelectOption(value, selectData) {
 
   let label

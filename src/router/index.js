@@ -2,15 +2,16 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
+
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
 
 //1. 登录
-const Login = () => import("@/views/login/Longin")
+const Login = () => import("@/views/login_register/login/Longin")
 //2. 注册
-const Register = () => import("@/views/register/Register")
+const Register = () => import("@/views/login_register/register/Register")
 //3. 首页
 const Home = () => import("@/views/home/Home")
 //3.1 经营概况
@@ -40,8 +41,35 @@ const EditSick = () => import("@/views/home/children/sick_manage/EditSick")
 
 //3.7 统计报表
 const StatisticsTable = () => import("@/views/home/children/statistics_table/StatisticsTable")
+//>1 患者统计
+const SickStatistics = () => import("@/views/home/children/statistics_table/children/sick_statistics/SickStatistics")
+//>2 药品统计
+const DrugStatistics = () => import("@/views/home/children/statistics_table/children/drug_statistics/DrugStatistics")
+//>3 收费统计
+const CostStatistics = () => import("@/views/home/children/statistics_table/children/cost_statistics/CostStatistics")
+//>4 检查项目统计
+const CheckItemStatistics = () => import("@/views/home/children/statistics_table/children/check_item_statistics/CheckItemStatistics")
+
+
 //3.8 系统设置
 const SystemSetting = () => import("@/views/home/children/system_setting/SystemSetting")
+//>1 基础设置
+const BaseSetting = () => import("@/views/home/children/system_setting/children/base_setting/BaseSetting")
+//>2 检查项目设置
+const CheckItemSetting = () => import("@/views/home/children/system_setting/children/check_item_setting/CheckItemSetting")
+//>3 诊所信息管理
+const ClinicInfoManage = () => import("@/views/home/children/system_setting/children/clinic_info_manage/ClinicInfoManage")
+//>4 费用设置
+const CostSetting = () => import("@/views/home/children/system_setting/children/cost_setting/CostSetting")
+//>5 字典表管理
+const DictionaryTableManage = () => import("@/views/home/children/system_setting/children/dictionary_table_manage/DictionaryTableManage")
+//>6 员工管理
+const EmployeeManage = () => import("@/views/home/children/system_setting/children/employee_manage/EmployeeManage")
+//>7 供应商管理
+const SupplierManage = () => import("@/views/home/children/system_setting/children/supplier_manage/SupplierManage")
+//>8 模板维护
+const TemplateManage = () => import("@/views/home/children/system_setting/children/template_manage/TemplateManage")
+
 
 //3.9 会员管理
 const VipManage = () => import("@/views/home/children/vip_manage/VipManage")
@@ -112,7 +140,6 @@ const StockManage = () => import("@/views/home/children/drug_manage/stock_manage
 //>6.1 库存管理详情
 const StockManageDetail = () => import("@/views/home/children/drug_manage/stock_manage/children/stock_detail/StockManageDetail")
 
-
 const routes = [
 
   {
@@ -176,28 +203,91 @@ const routes = [
         component: EditRegistrationInfo
       },
 
+
       {
         //3.6 患者管理
         path: 'sickManage/:homeTitleIndex',
         component: SickManage,
       },
-
       {
         //> 1编辑患者
         path: 'editSick/:homeTitleIndex',
         component: EditSick
       },
-
-
       {
         //3.7 统计报表
         path: 'statisticsTable',
-        component: StatisticsTable
+        component: StatisticsTable,
+        children: [
+          {
+            //>1 药品统计
+            path: 'drugStatistics/:homeTitleIndex',
+            component: DrugStatistics
+          },
+          {
+            //>2 收费统计
+            path: 'costStatistics/:homeTitleIndex',
+            component: CostStatistics
+          },
+          {
+            //>3 患者统计
+            path: 'sickStatistics/:homeTitleIndex',
+            component: SickStatistics
+          },
+          {
+            //>4 检查项目统计
+            path: 'checkItemStatistics/:homeTitleIndex',
+            component: CheckItemStatistics
+          },
+        ]
       },
+
       {
         //3.8 系统设置
         path: 'systemSetting',
-        component: SystemSetting
+        component: SystemSetting,
+        children: [
+          {
+            //>1 基础设置
+            path: 'baseSetting/:homeTitleIndex',
+            component: BaseSetting
+          },
+          {
+            //>2 检查项目设置
+            path: 'checkItemSetting/:homeTitleIndex',
+            component: CheckItemSetting
+          },
+          {
+            //>3 诊所信息管理
+            path: 'clinicInfoManage/:homeTitleIndex',
+            component: ClinicInfoManage
+          },
+          {
+            // >4 费用设置
+            path: 'costSetting/:homeTitleIndex',
+            component: CostSetting
+          },
+          {
+            //>5 字典表管理
+            path: 'dictionaryTableManage/:homeTitleIndex',
+            component: DictionaryTableManage
+          },
+          {
+            //>6 员工管理
+            path: 'employeeManage/:homeTitleIndex',
+            component: EmployeeManage
+          },
+          {
+            //>7 供应商管理
+            path: 'supplierManage/:homeTitleIndex',
+            component: SupplierManage
+          },
+          {
+            //>8 模板维护
+            path: 'templateManage/:homeTitleIndex',
+            component:TemplateManage
+          }
+        ]
       },
       //3.9 会员管理
       {
@@ -236,8 +326,6 @@ const routes = [
         path: 'workSpace/:homeTitleIndex',
         component: WorkSpace
       },
-
-
       //3.11 药品管理
       // >1 药品信息维护
       {
@@ -277,7 +365,6 @@ const routes = [
         path: 'newAddEnterStockInfo/:homeTitleIndex',
         component: NewAddEnterStockInfo
       },
-
       // >3 出库管理
       {
         //>3.1 出库信息
@@ -304,8 +391,6 @@ const routes = [
         path: 'newAddOutStockInfo/:homeTitleIndex',
         component: NewAddOutStockInfo
       },
-
-
       //>4 库存管理
       {
         path: 'stockManage/:homeTitleIndex',
@@ -316,8 +401,6 @@ const routes = [
         path: 'stockManageDetail/:homeTitleIndex',
         component: StockManageDetail
       },
-
-
       // >5 库存盘点
       {
         // >5.1 盘点记录
@@ -334,8 +417,6 @@ const routes = [
         path: 'stockCheckCurrent/:homeTitleIndex',
         component: StockCheckCurrent
       },
-
-
       // >6 药品调价
       {
         path: 'drugChangePrice/:homeTitleIndex',
